@@ -1,3 +1,4 @@
+package Codice;
 
 public class Fisico extends Meeting {
 	
