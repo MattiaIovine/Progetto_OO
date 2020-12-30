@@ -10,6 +10,8 @@ public class Persona {
 	public int    Telefono;
 	public float  Salario;
 	public int    Valutazione;
+	//Lista progetti
+	//Lista Meeting
 
 	
 	
