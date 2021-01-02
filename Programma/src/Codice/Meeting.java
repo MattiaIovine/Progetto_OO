@@ -9,4 +9,6 @@ public class Meeting {
 	public Date     Data;
 	public Time     Orario;
 	public Progetto Argomento;
+	//Attributo tipo Progetto??
+	//Lista Persona??
 }

@@ -6,4 +6,7 @@ public class Progetto {
 	public String ID_Progetto;
 	public String Tipologia;
 	public String Ambito;
+	//Attributo tipo Meeting??
+	//Lista Persona??
+	
 }

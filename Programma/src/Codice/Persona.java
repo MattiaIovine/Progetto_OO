@@ -12,6 +12,7 @@ public class Persona {
 	public int    Valutazione;
 	//Lista progetti
 	//Lista Meeting
+	//Lista Skill??
 
 	
 	
