@@ -7,6 +7,6 @@ public class Progetto {
 	public String ID_Progetto;
 	public String Tipologia;
 	public String Ambito;
-	//Lista Persona??
+
 	public ArrayList<Persona> Componenti;
 }
