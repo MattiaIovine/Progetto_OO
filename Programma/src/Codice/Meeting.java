@@ -1,5 +1,6 @@
 package Codice;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Meeting {
@@ -9,6 +10,6 @@ public class Meeting {
 	public Date     Data;
 	public Time     Orario;
 	public Progetto Argomento;
-	//Attributo tipo Progetto??
-	//Lista Persona??
+	public ArrayList<Persona> Partecipanti;
+	
 }
