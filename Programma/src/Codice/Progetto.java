@@ -8,6 +8,7 @@ public class Progetto {
 	public String Tipologia;
 	public String Ambito;
 	public ArrayList<Persona> Componenti;
+	
 	//GETTER E SETTER
 	public String getID_Progetto() {
 		return ID_Progetto;
