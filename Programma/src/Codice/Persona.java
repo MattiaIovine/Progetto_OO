@@ -1,5 +1,7 @@
 package Codice;
 
+import java.util.ArrayList;
+
 public class Persona {
 	
 	//ATTRIBUTI 
@@ -9,10 +11,11 @@ public class Persona {
 	public String Mail;
 	public int    Telefono;
 	public float  Salario;
-	public int    Valutazione;
-	//Lista progetti
-	//Lista Meeting
-	//Lista Skill??
+	public int 	  Valutazione;
+	
+	public ArrayList<Progetto> Lavori;
+	public ArrayList<Meeting> Partecipazioni;
+	public ArrayList<Skill> Abilità;
 
 	
 	
