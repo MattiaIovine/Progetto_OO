@@ -1,4 +1,5 @@
 package Codice;
+import Controller.Controller;
 import java.util.ArrayList;
 
 public class Progetto {

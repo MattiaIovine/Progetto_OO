@@ -1,5 +1,5 @@
 package Codice;
-
+import Controller.Controller;
 import java.util.ArrayList;
 
 public class Persona {
@@ -16,6 +16,8 @@ public class Persona {
 	public ArrayList<Progetto> Lavori;
 	public ArrayList<Meeting> Partecipazioni;
 	public ArrayList<Skill> Abilità;
+	
+	//Controller theController;
 	
 	
 	

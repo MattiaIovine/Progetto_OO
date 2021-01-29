@@ -1,4 +1,5 @@
 package Codice;
+import Controller.Controller;
 
 public class Skill {
 	
