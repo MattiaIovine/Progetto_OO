@@ -1,17 +1,17 @@
 package Codice;
-import Controller.Controller;
 import java.util.ArrayList;
-
-public class Persona {
+import Controller.*;
+public class Impiegato {
+	
 	
 	//ATTRIBUTI 
 	public String CF;
 	public String Nome;
 	public String Cognome;
 	public String Mail;
-	public int    Telefono;
+	public String    Telefono;
 	public float  Salario;
-	public int 	  Valutazione;
+	public int 	  Valutazione = 0;
 	
 	public ArrayList<Progetto> Lavori;
 	public ArrayList<Meeting> Partecipazioni;
@@ -19,7 +19,16 @@ public class Persona {
 	
 	//Controller theController;
 	
-	
+	//COSTRUTTORE
+	public Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
+		super();
+		CF = cF;
+		Nome = nome;
+		Cognome = cognome;
+		Mail = mail;
+		Telefono = telefono;
+		Salario = salario; 
+	}
 	
 	//METODI
 	public String getCF() {
@@ -50,10 +59,10 @@ public class Persona {
 		Mail = mail;
 	}
 	
-	public int getTelefono() {
+	public String getTelefono() {
 		return Telefono;
 	}
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		Telefono = telefono;
 	}
 	
@@ -70,6 +79,7 @@ public class Persona {
 	public void setValutazione(int valutazione) {
 		Valutazione = valutazione;
 	}
+	
 	
 	
 }

@@ -8,7 +8,7 @@ public class Progetto {
 	public String ID_Progetto;
 	public String Tipologia;
 	public String Ambito;
-	public ArrayList<Persona> Componenti;
+	public ArrayList<Impiegato> Componenti;
 	
 	//GETTER E SETTER
 	public String getID_Progetto() {

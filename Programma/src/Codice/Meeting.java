@@ -11,7 +11,7 @@ public class Meeting {
 	public Date     Data;
 	public Time     Orario;
 	public Progetto Argomento;
-	public ArrayList<Persona> Partecipanti;
+	public ArrayList<Impiegato> Partecipanti;
 	
 	//GETTER e SETTER
 	public String getID_Meeting() {
