@@ -9,6 +9,9 @@ public class Database {
 	public ArrayList<Meeting> TabellaMeeting;
 	public ArrayList<Skill> TabellaSkills;
 	
+	public Database() {
+		
+	}
 	
 	//METODI
 	public void Inizializzazione() {
@@ -27,10 +30,34 @@ public class Database {
 	TabellaImpiegati.add(p4);
 	TabellaImpiegati.add(p5);
 	
-	ArrayList<Progetto>TabellaProgetti = new ArrayList<>();	
-	ArrayList<Meeting>TabellaMeeting = new ArrayList<>();	
-	ArrayList<Skill>TabellaSkills = new ArrayList<>();	
+	
+//	ArrayList<Progetto>TabellaProgetti = new ArrayList<>();	
+//	ArrayList<Meeting>TabellaMeeting = new ArrayList<>();	
+//	ArrayList<Skill>TabellaSkills = new ArrayList<>();	
 		
+	}
+	
+	public void add_Impiegato(Impiegato imp) {
+		
+		this.TabellaImpiegati.add(imp);
+		for (Impiegato i: TabellaImpiegati) {
+			System.out.println(i.Nome);
+		}
+	}
+	
+	public void add_Progetto(Progetto pro) {
+		
+		this.TabellaProgetti.add(pro);
+	}
+
+	public void add_Meeting(Meeting mee) {
+	
+		this.TabellaMeeting.add(mee);
+	}
+	
+	public void add_Skill(Skill ski) {
+		
+		this.TabellaSkills.add(ski);
 	}
 	
 }

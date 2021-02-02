@@ -1,6 +1,6 @@
 package Codice;
 import java.util.ArrayList;
-import Controller.*;
+
 public class Impiegato {
 	
 	
