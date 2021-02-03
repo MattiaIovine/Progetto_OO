@@ -35,7 +35,7 @@ public class Impiegato {
 		return CF;
 	}
 	public void setCF(String cF) {
-		CF = cF;
+		CF = cF; 
 	}
 	
 	public String getNome() {
