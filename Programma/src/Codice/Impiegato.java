@@ -9,7 +9,7 @@ public class Impiegato {
 	public String Nome;
 	public String Cognome;
 	public String Mail;
-	public String    Telefono;
+	public String Telefono;
 	public float  Salario;
 	public int 	  Valutazione = 0;
 	
