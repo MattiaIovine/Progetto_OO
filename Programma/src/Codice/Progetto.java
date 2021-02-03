@@ -10,6 +10,17 @@ public class Progetto {
 	public String Ambito;
 	public ArrayList<Impiegato> Componenti;
 	
+	
+	//CONSTRUTTORE
+	
+	public Progetto(String iD_Progetto, String tipologia, String ambito) {
+		super();
+		ID_Progetto = iD_Progetto;
+		Tipologia = tipologia;
+		Ambito = ambito;
+	}
+	
+	
 	//GETTER E SETTER
 	public String getID_Progetto() {
 		return ID_Progetto;

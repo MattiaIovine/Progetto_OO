@@ -29,7 +29,6 @@ public class Controller {
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
 		
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
-		
 	}
 	
 	

@@ -12,6 +12,17 @@ public class Meeting {
 	public Time     Orario;
 	public Progetto Argomento;
 	public ArrayList<Impiegato> Partecipanti;
+
+	//CONSTRUTTORE 
+	
+	public Meeting(String iD_Meeting, Date data, Time orario, Progetto argomento) {
+		super();
+		ID_Meeting = iD_Meeting;
+		Data = data;
+		Orario = orario;
+		Argomento = argomento;
+		
+	}
 	
 	//GETTER e SETTER
 	public String getID_Meeting() {
@@ -39,4 +50,11 @@ public class Meeting {
 		Argomento = argomento;
 	}
 	
+	
+	public void Aggiungi_Partecipanti() {
+		for (Impiegato i : Argomento.Componenti) {
+			Partecipanti.add(i);
+		}
+		
+	}
 }
