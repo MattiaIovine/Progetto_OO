@@ -6,22 +6,25 @@ import Database.*;
 
 public class Controller {
 	
-	public ImpiegatoDAO IDAO;
-	public Database DB;
+	ImpiegatoDAO IDAO= new ImpiegatoDAO();
+	MeetingDAO MDAO = new MeetingDAO();
+	ProgettoDAO PDAO = new ProgettoDAO();
+	SkillDAO SDAO = new SkillDAO();
+	Database DB= new Database();
 	
 	public static void main(String[] args) {
-		
-		Database DB= new Database();
-		DB.Inizializzazione();
+
 		Controller c = new Controller();
-		
-		ImpiegatoDAO IDAO = new ImpiegatoDAO();
-		c.Assumi_Impiegato(null, "nuovo", null, null, null, 0);
+
 		
 		
 	}
 	
 	public Controller() {
+		DB.Inizializzazione();
+		
+		Assumi_Impiegato(null, "nuovo", null, null, null, 0);
+		Assumi_Impiegato(null, "funziona",null,null,null,0);
 		
 	}
 	

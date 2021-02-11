@@ -4,14 +4,12 @@ import Codice.*;
 import DAO.*;
 
 public class Database {
-	public ArrayList<Impiegato> TabellaImpiegati;
-	public ArrayList<Progetto> TabellaProgetti;
-	public ArrayList<Meeting> TabellaMeeting;
-	public ArrayList<Skill> TabellaSkills;
+	ArrayList<Impiegato> TabellaImpiegati = new ArrayList<>();
+	ArrayList<Progetto> TabellaProgetti = new ArrayList<>();
+	ArrayList<Meeting> TabellaMeeting = new ArrayList<>();
+	ArrayList<Skill> TabellaSkills = new ArrayList<>();
 	
-	public Database() {
-		
-	}
+	
 	
 	//METODI
 	public void Inizializzazione() {
@@ -22,19 +20,12 @@ public class Database {
 	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdilibero.it","020765876",1200);
 	
 	
-	ArrayList<Impiegato>TabellaImpiegati = new ArrayList<>();	
-	
 	TabellaImpiegati.add(p1);
 	TabellaImpiegati.add(p2);
 	TabellaImpiegati.add(p3);
 	TabellaImpiegati.add(p4);
 	TabellaImpiegati.add(p5);
 	
-	
-//	ArrayList<Progetto>TabellaProgetti = new ArrayList<>();	
-//	ArrayList<Meeting>TabellaMeeting = new ArrayList<>();	
-//	ArrayList<Skill>TabellaSkills = new ArrayList<>();	
-		
 	}
 	
 	public void add_Impiegato(Impiegato imp) {
