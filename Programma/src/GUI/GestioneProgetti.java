@@ -7,31 +7,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-
+import Controller.Controller;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 public class GestioneProgetti extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GestioneProgetti frame = new GestioneProgetti();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+		Controller theController;
 
 	/**
 	 * Create the frame.
 	 */
-	public GestioneProgetti() {
+	public GestioneProgetti(Controller c) {
+		theController = c;
 		setTitle("Gestione Progetti");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 542, 421);
@@ -41,6 +30,12 @@ public class GestioneProgetti extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton Bottone_Indietro = new JButton("Indietro");
+		Bottone_Indietro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				theController.Torna_Finestra_Principale();
+			}
+		});
 		Bottone_Indietro.setBounds(426, 328, 89, 44);
 		contentPane.add(Bottone_Indietro);
 		
