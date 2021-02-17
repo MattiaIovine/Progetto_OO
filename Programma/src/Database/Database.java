@@ -13,11 +13,11 @@ public class Database {
 	
 	//METODI
 	public void Inizializzazione() {
-	Impiegato p1 = new Impiegato("mytg5643", "Mario", "Rossi", "mario.rossilibero.it","0207654654",1200);
-	Impiegato p2 = new Impiegato("uytf6443", "Mattia", "Iovine", "matt.iovinestudenti.unina.it","0810886549",1200);
-	Impiegato p3 = new Impiegato("4edxtc43", "Felice", "Esposito", "felice.esposito9studenti.unina.it","0813246584",1200);
-	Impiegato p4 = new Impiegato("nbggt643", "Gabriele", "Belardo", "ga.belardostudenti.unina.it","0207658874",1200);
-	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdilibero.it","020765876",1200);
+	Impiegato p1 = new Impiegato("mytg5643", "Mario", "Rossi", "mario.rossi@libero.it","0207654654",1200);
+	Impiegato p2 = new Impiegato("uytf6443", "Mattia", "Iovine", "matt.iovine@studenti.unina.it","0810886549",1200);
+	Impiegato p3 = new Impiegato("4edxtc43", "Felice", "Esposito", "felice.esposito9@studenti.unina.it","0813246584",1200);
+	Impiegato p4 = new Impiegato("nbggt643", "Gabriele", "Belardo", "ga.belardo@studenti.unina.it","0207658874",1200);
+	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdi@libero.it","020765876",1200);
 	
 	
 	TabellaImpiegati.add(p1);
@@ -32,7 +32,7 @@ public class Database {
 		
 		this.TabellaImpiegati.add(imp);
 		for (Impiegato i: TabellaImpiegati) {
-			System.out.println(i.Nome);
+			System.out.println(i.Mail);
 		}
 	}
 	

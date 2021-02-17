@@ -115,12 +115,21 @@ public class AssunzioneImpiegato extends JFrame {
 		JButton Bottone_Conferma_Assunzione = new JButton("Conferma Assunzione");
 		Bottone_Conferma_Assunzione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				if(Campo_CF.getText().length()==16 && !Campo_Nome.getText().isEmpty() && !Campo_Cognome.getText().isEmpty() && !Campo_Mail.getText().isEmpty() && Campo_Telefono.getText().length()>9 && !Campo_Salario.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(frame, "Assunzione effettuata");
-					theController.Assumi_Impiegato(Campo_CF.getText() , Campo_Nome.getText(), Campo_Cognome.getText(), Campo_Mail.getText(), Campo_Telefono.getText(), Float.parseFloat(Campo_Salario.getText()));
-					
-				} else JOptionPane.showMessageDialog(frame, "Tutti i campi devono essere pieni!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+				if(Campo_CF.getText().length()==16) {
+					if(!Campo_Nome.getText().isEmpty() && !Campo_Cognome.getText().isEmpty() && !Campo_Mail.getText().isEmpty() && Campo_Telefono.getText().length()>9) {
+						try {
+							if(Float.parseFloat(Campo_Salario.getText())>0.0) {
+								JOptionPane.showMessageDialog(frame, "Assunzione effettuata");
+								theController.Assumi_Impiegato(Campo_CF.getText() , Campo_Nome.getText(), Campo_Cognome.getText(), Campo_Mail.getText(), Campo_Telefono.getText(), Float.parseFloat(Campo_Salario.getText()));
+						}
+							else JOptionPane.showMessageDialog(frame, "Il campo Salario deve essere positivo!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+						} catch (NumberFormatException nfe) {
+							JOptionPane.showMessageDialog(frame, "Il salario deve essere un valore numerico non nullo!", "Errore", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					else JOptionPane.showMessageDialog(frame, "Tutti i campi devono essere pieni!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+				}
+				else JOptionPane.showMessageDialog(frame, "Il codice fiscale deve essere di 16 caratteri!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 			}
 		});
 		Bottone_Conferma_Assunzione.setBounds(380, 327, 137, 44);

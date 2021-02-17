@@ -13,7 +13,6 @@ public class Fisico extends Meeting {
 	public Fisico(String iD_Meeting, Date data, Time orario, Progetto argomento, String sala) {
 		super(iD_Meeting, data, orario, argomento);
 		Sala_Riunioni= sala;
-		// TODO Auto-generated constructor stub
 	}
 }
 
