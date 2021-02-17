@@ -30,8 +30,8 @@ public class Controller {
 		fp = new FinestraPrincipale(this);
 		fp.setVisible(true);
 		
-		Assumi_Impiegato(null, "nuovo", null, null, null, 0);
-		Assumi_Impiegato(null, "funziona",null,null,null,0);
+		//Assumi_Impiegato(null, "nuovo", null, null, null, 0);
+		//Assumi_Impiegato(null, "funziona",null,null,null,0);
 		
 	}
 	
@@ -59,6 +59,9 @@ public class Controller {
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
 		
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
+		ai.setVisible(false);
+		fp.setVisible(true);
+		
 	}
 	
 	
