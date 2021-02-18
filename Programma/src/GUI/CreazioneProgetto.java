@@ -18,11 +18,18 @@ import javax.swing.JScrollBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
+import javax.swing.JTable;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 
 public class CreazioneProgetto extends JFrame {
 
 	private JPanel contentPane;
 	Controller theController;
+	JComboBox<String> boxAmbiti;
+	JComboBox<String> boxTipologie;
+	private JTextField Campo_Titolo;
 
 	public CreazioneProgetto(Controller c) {
 		theController = c;
@@ -33,13 +40,13 @@ public class CreazioneProgetto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Tipologia");
-		lblNewLabel.setBounds(88, 46, 86, 14);
-		contentPane.add(lblNewLabel);
+		JLabel Etichetta_Tipologia = new JLabel("Tipologia");
+		Etichetta_Tipologia.setBounds(88, 190, 86, 14);
+		contentPane.add(Etichetta_Tipologia);
 		
-		JLabel lblNewLabel_1 = new JLabel("Ambito");
-		lblNewLabel_1.setBounds(87, 118, 46, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel Etichetta_Ambito = new JLabel("Ambito");
+		Etichetta_Ambito.setBounds(88, 118, 46, 14);
+		contentPane.add(Etichetta_Ambito);
 		
 		JButton Bottone_Indietro = new JButton("Indietro");
 		Bottone_Indietro.addActionListener(new ActionListener() {
@@ -52,10 +59,45 @@ public class CreazioneProgetto extends JFrame {
 		
 		JButton Bottone_Crea_Progetto = new JButton("Crea Progetto");
 		Bottone_Crea_Progetto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {				
+			public void actionPerformed(ActionEvent e) {	
+				System.out.println(boxAmbiti.getSelectedItem());
 			}
 		});
 		Bottone_Crea_Progetto.setBounds(380, 322, 120, 49);
 		contentPane.add(Bottone_Crea_Progetto);
+		
+		
+		String[] ambiti = {
+		         "Economia",
+		         "Medicina",
+		         "Informatica",
+		         "Ingegneria"      
+		};
+		
+		String[] tipologie = {
+		         "Ricerca Sperimentale",
+		         "Ricerca di base",
+		         "Sviluppo Sperimentale",
+		         "Ricerca Industriale"
+		};
+		
+		boxAmbiti = new JComboBox(ambiti);
+		boxAmbiti.setSelectedIndex(-1);
+		boxAmbiti.setBounds(215, 114, 137, 22);
+		contentPane.add(boxAmbiti);
+		
+		boxTipologie = new JComboBox(tipologie);
+		boxTipologie.setSelectedIndex(-1);
+		boxTipologie.setBounds(215, 186, 137, 22);
+		contentPane.add(boxTipologie);
+		
+		JLabel Etichetta_Titolo_Progetto = new JLabel("Titolo Progetto");
+		Etichetta_Titolo_Progetto.setBounds(88, 46, 86, 14);
+		contentPane.add(Etichetta_Titolo_Progetto);
+		
+		Campo_Titolo = new JTextField();
+		Campo_Titolo.setBounds(215, 43, 264, 20);
+		contentPane.add(Campo_Titolo);
+		Campo_Titolo.setColumns(10);
 	}
 }
