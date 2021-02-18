@@ -28,9 +28,7 @@ public class AssunzioneImpiegato extends JFrame {
 	private JTextField Campo_Salario;
 	JFrame frame;
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public AssunzioneImpiegato(Controller c) {
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

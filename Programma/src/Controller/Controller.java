@@ -20,6 +20,7 @@ public class Controller {
 	GestioneProgetti gp;
 	GestioneMeeting gm;
 	AssunzioneImpiegato ai;
+	CreazioneProgetto cp;
 	
 	public static void main(String[] args) {
 		Controller c = new Controller();		
@@ -51,15 +52,24 @@ public class Controller {
 		ai.setVisible(true);
 	}
 	public void Torna_Finestra_Principale() {
-		
 		fp.setVisible(true);
 	}
 	
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
 		ai.setVisible(false);
-		fp.setVisible(true);
-		
+		fp.setVisible(true);	
+	}
+	
+	public void Torna_Gestione_Progetto() {
+		cp.setVisible(false);
+		gp.setVisible(true);
+	}
+	
+	public void Vista_Creazione_Progetto() {
+		gp.setVisible(false);
+		cp= new CreazioneProgetto(this);
+		cp.setVisible(true);
 	}
 	
 	

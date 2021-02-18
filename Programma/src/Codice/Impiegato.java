@@ -12,10 +12,12 @@ public class Impiegato {
 	public String Telefono;
 	public float  Salario;
 	public int 	  Valutazione = 0;
+	public ArrayList<String> Tipologie = new ArrayList<>();
+	public ArrayList<Skill> Abilità = new ArrayList<>();
 	
-	public ArrayList<Progetto> Lavori;
-	public ArrayList<Meeting> Partecipazioni;
-	public ArrayList<Skill> Abilità;
+//	public ArrayList<Progetto> Lavori;
+//	public ArrayList<Meeting> Partecipazioni;
+
 	
 	//Controller theController;
 	

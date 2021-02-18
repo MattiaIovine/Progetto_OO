@@ -16,10 +16,6 @@ public class FinestraPrincipale extends JFrame {
 		Controller theController;
 		
 
-
-	/**
-	 * Create the frame.
-	 */
 	public FinestraPrincipale(Controller c) {
 		theController = c;
 		setTitle("Finestra Principale");

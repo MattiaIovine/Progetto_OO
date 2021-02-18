@@ -15,9 +15,6 @@ public class GestioneMeeting extends JFrame {
 	private JPanel contentPane;
 	Controller theController;
 
-	/**
-	 * Create the frame.
-	 */
 	public GestioneMeeting(Controller c) {
 		theController = c;
 		setTitle("Gestione Meeting");

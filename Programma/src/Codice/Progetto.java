@@ -8,6 +8,7 @@ public class Progetto {
 	public String ID_Progetto;
 	public String Tipologia;
 	public String Ambito;
+	public boolean Attivo;
 	public ArrayList<Impiegato> Componenti;
 	
 	
@@ -18,9 +19,9 @@ public class Progetto {
 		ID_Progetto = iD_Progetto;
 		Tipologia = tipologia;
 		Ambito = ambito;
+		Attivo = true;
 	}
-	
-	
+
 	//GETTER E SETTER
 	public String getID_Progetto() {
 		return ID_Progetto;
@@ -41,6 +42,11 @@ public class Progetto {
 		Ambito = ambito;
 	}
 
-
-
+	public boolean isAttivo() {
+		return Attivo;
+	}
+	
+	public void setAttivo_false() {
+		Attivo = false;
+	}
 }

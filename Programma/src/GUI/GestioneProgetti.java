@@ -16,9 +16,6 @@ public class GestioneProgetti extends JFrame {
 
 		Controller theController;
 
-	/**
-	 * Create the frame.
-	 */
 	public GestioneProgetti(Controller c) {
 		theController = c;
 		setTitle("Gestione Progetti");
@@ -44,10 +41,19 @@ public class GestioneProgetti extends JFrame {
 		contentPane.add(Bottone_VediProgetti);
 		
 		JButton Bottone_CreaProgetto = new JButton("Crea Nuovo Progetto");
+		Bottone_CreaProgetto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				theController.Vista_Creazione_Progetto();
+			}
+		});
 		Bottone_CreaProgetto.setBounds(60, 209, 169, 44);
 		contentPane.add(Bottone_CreaProgetto);
 		
 		JButton Bottone_FineProgetto = new JButton("Termina Progetto");
+		Bottone_FineProgetto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		Bottone_FineProgetto.setBounds(60, 137, 169, 44);
 		contentPane.add(Bottone_FineProgetto);
 	}
