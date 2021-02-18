@@ -41,7 +41,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Gestione_Progetti();
 			}
 		});
-		Bottone_Progetti.setBounds(62, 60, 140, 44);
+		Bottone_Progetti.setBounds(62, 60, 229, 44);
 		contentPane.add(Bottone_Progetti);
 		
 		JButton Bottone_Meeting = new JButton("Gestione Meeting");
@@ -50,7 +50,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Gestione_Meeting();
 			}
 		});
-		Bottone_Meeting.setBounds(62, 160, 140, 44);
+		Bottone_Meeting.setBounds(62, 160, 229, 44);
 		contentPane.add(Bottone_Meeting);
 		
 		JButton Bottone_Assunzioni = new JButton("Assunzione Impiegato");
@@ -59,7 +59,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Assunzione_Impiegato();
 			}
 		});
-		Bottone_Assunzioni.setBounds(62, 260, 140, 44);
+		Bottone_Assunzioni.setBounds(62, 260, 229, 44);
 		contentPane.add(Bottone_Assunzioni);
 	}
 }

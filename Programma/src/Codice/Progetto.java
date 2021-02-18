@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Progetto {
 	
 	//ATTRIBUTI
-	public String Titolo_Progetto;
+	public String Titolo;
 	public String Tipologia;
 	public String Ambito;
 	public boolean Attivo;
@@ -14,20 +14,20 @@ public class Progetto {
 	
 	//CONSTRUTTORE
 	
-	public Progetto(String iD_Progetto, String tipologia, String ambito) {
+	public Progetto(String titolo, String tipologia, String ambito) {
 		super();
-		Titolo_Progetto = iD_Progetto;
+		Titolo = titolo;
 		Tipologia = tipologia;
 		Ambito = ambito;
 		Attivo = true;
 	}
 
 	//GETTER E SETTER
-	public String getID_Progetto() {
-		return Titolo_Progetto;
+	public String getTitolo() {
+		return Titolo;
 	}
-	public void setID_Progetto(String iD_Progetto) {
-		Titolo_Progetto = iD_Progetto;
+	public void setTitolo(String titolo) {
+		Titolo = titolo;
 	}
 	public String getTipologia() {
 		return Tipologia;

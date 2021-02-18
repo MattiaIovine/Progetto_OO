@@ -39,6 +39,9 @@ public class Database {
 	public void add_Progetto(Progetto pro) {
 		
 		this.TabellaProgetti.add(pro);
+		for (Progetto p: TabellaProgetti) {
+			System.out.println(p.Titolo);
+		}
 	}
 
 	public void add_Meeting(Meeting mee) {
@@ -51,4 +54,14 @@ public class Database {
 		this.TabellaSkills.add(ski);
 	}
 	
+	
+	public boolean ProgettoByTitolo(String titolo) {
+		boolean temp= false;
+		for(Progetto p: TabellaProgetti) {
+			if(titolo.equals(p.Titolo)) {
+				temp=true;
+			}
+		}
+		return temp;
+	}
 }

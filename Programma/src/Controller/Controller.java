@@ -35,7 +35,8 @@ public class Controller {
 		
 	}
 	
-	//METODI
+	//METODI GUI
+	
 	public void Vista_Gestione_Progetti() {
 		fp.setVisible(false);
 		gp= new GestioneProgetti(this);
@@ -55,12 +56,6 @@ public class Controller {
 		fp.setVisible(true);
 	}
 	
-	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
-		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
-		ai.setVisible(false);
-		fp.setVisible(true);	
-	}
-	
 	public void Torna_Gestione_Progetto() {
 		cp.setVisible(false);
 		gp.setVisible(true);
@@ -71,6 +66,28 @@ public class Controller {
 		cp= new CreazioneProgetto(this);
 		cp.setVisible(true);
 	}
+	
+	
+	
+	//METODI CODICE
+	
+	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
+		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
+		ai.setVisible(false);
+		fp.setVisible(true);	
+	}
+	
+	public void Crea_Progetto(String Titolo ,String Tipologia, String Ambito) {
+		if(PDAO.isProgettoByTitolo(Titolo, DB)) {
+			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione", JOptionPane.WARNING_MESSAGE);
+		}
+		else {
+			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
+			cp.setVisible(false);
+			fp.setVisible(true);
+		}
+	}
+	
 	
 	
 	
