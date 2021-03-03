@@ -55,7 +55,7 @@ public class Controller {
 	public void Torna_Finestra_Principale() {
 		fp.setVisible(true);
 	}
-	
+	 
 	public void Torna_Gestione_Progetto() {
 		cp.setVisible(false);
 		gp.setVisible(true);
