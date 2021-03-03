@@ -32,6 +32,10 @@ public class Impiegato {
 		Salario = salario; 
 	}
 	
+	public String toString() {
+		return(this.CF+" "+this.Nome+" "+this.Cognome+" "+this.Salario);
+	}
+	
 	//METODI
 	public String getCF() {
 		return CF;

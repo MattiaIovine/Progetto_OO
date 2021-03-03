@@ -9,3 +9,5 @@ public class Skill {
 	//public String Tipologia;
 	//Lista Persona??
 }
+
+

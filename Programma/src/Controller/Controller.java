@@ -8,6 +8,9 @@ import DAO.*;
 import GUI.*;
 import Database.*;
 
+
+//
+import java.util.ArrayList;
 public class Controller {
 	
 	ImpiegatoDAO IDAO= new ImpiegatoDAO();
@@ -21,6 +24,7 @@ public class Controller {
 	GestioneMeeting gm;
 	AssunzioneImpiegato ai;
 	CreazioneProgetto cp;
+	SelezioneImpiegato si;
 	
 	public static void main(String[] args) {
 		Controller c = new Controller();		
@@ -28,8 +32,11 @@ public class Controller {
 	
 	public Controller() {
 		DB.Inizializzazione();
-		fp = new FinestraPrincipale(this);
-		fp.setVisible(true);
+		//fp = new FinestraPrincipale(this);
+		//fp.setVisible(true);
+		ArrayList<Impiegato> risultati = new ArrayList<>();
+		si = new SelezioneImpiegato(this, risultati);
+		si.setVisible(true);
 		//Assumi_Impiegato(null, "nuovo", null, null, null, 0);
 		//Assumi_Impiegato(null, "funziona",null,null,null,0);
 		
