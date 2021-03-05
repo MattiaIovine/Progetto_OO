@@ -7,11 +7,11 @@ import java.util.Date;
 public class Meeting {
 	
 	//ATTRIBUTI
-	public String   ID_Meeting;
-	public Date     Data;
-	public Time     Orario;
-	public Progetto Argomento;
-	public ArrayList<Impiegato> Partecipanti;
+	private String   ID_Meeting;
+	private Date     Data;
+	private Time     Orario;
+	private Progetto Argomento;
+	private ArrayList<Impiegato> Partecipanti;
 
 	//CONSTRUTTORE 
 	
@@ -50,9 +50,9 @@ public class Meeting {
 		Argomento = argomento;
 	}
 	
-	
 	public void Aggiungi_Partecipanti() {
-		for (Impiegato i : Argomento.Componenti) {
+		ArrayList<Impiegato> Componenti= Argomento.getComponenti();
+		for (Impiegato i : Componenti) {
 			Partecipanti.add(i);
 		}
 		

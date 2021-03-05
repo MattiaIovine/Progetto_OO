@@ -89,8 +89,14 @@ public class AssunzioneImpiegato extends JFrame {
 					JOptionPane.showMessageDialog(frame, "L'abilità deve avere una descrizione!","Attenzione", JOptionPane.WARNING_MESSAGE);
 				}
 				else {
+					if(!Abilità.contains(Campo_Abilità.getText().trim())) {
 					Abilità.add(Campo_Abilità.getText().trim());
 					Campo_Abilità.setText("");
+					}
+					else {
+						JOptionPane.showMessageDialog(frame, "Inserire un'abilità diversa!","Attenzione", JOptionPane.ERROR_MESSAGE);
+						Campo_Abilità.setText("");
+					}
 				}
 			}
 		});

@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Progetto {
 	
 	//ATTRIBUTI
-	public String Titolo;
-	public String Tipologia;
-	public String Ambito;
-	public boolean Attivo;
-	public ArrayList<Impiegato> Componenti;
+	private String Titolo;
+	private String Tipologia;
+	private String Ambito;
+	private boolean Attivo;
+	private ArrayList<Impiegato> Componenti;
 	
 	
 	//CONSTRUTTORE
@@ -49,4 +49,9 @@ public class Progetto {
 	public void setAttivo_false() {
 		Attivo = false;
 	}
+	
+	public ArrayList<Impiegato> getComponenti(){
+		return this.Componenti;
+	}
+	
 }

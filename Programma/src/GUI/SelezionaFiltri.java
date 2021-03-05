@@ -2,14 +2,21 @@ package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Codice.Impiegato;
+import Codice.Skill;
+import Controller.Controller;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
 public class SelezionaFiltri extends JFrame {
@@ -19,8 +26,10 @@ public class SelezionaFiltri extends JFrame {
 	private JTextField Campo_Val_Max;
 	private JTextField Campo_Salario_Min;
 	private JTextField Campo_Salario_Max;
+	Controller theController;
 
-	public SelezionaFiltri() {
+	public SelezionaFiltri(ArrayList<Skill> listaskill, Controller c) {
+		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 569, 380);
 		contentPane = new JPanel();
@@ -73,9 +82,16 @@ public class SelezionaFiltri extends JFrame {
 		BoxAmbito.setBounds(130, 119, 91, 22);
 		contentPane.add(BoxAmbito);
 		
+		DefaultListModel<String> newListModel = new DefaultListModel<String>();
+		for(Skill s:listaskill) {
+			newListModel.addElement(s.getNome());
+		}
 		JList Lista_Skill = new JList();
 		Lista_Skill.setBounds(130, 189, 287, 97);
 		contentPane.add(Lista_Skill);
+		Lista_Skill.setModel(newListModel);
+		Lista_Skill.setVisible(true);
+		getContentPane().add(Lista_Skill,BorderLayout.SOUTH);
 		
 		
 		JLabel Etichetta_Skill = new JLabel("Skill Richieste");

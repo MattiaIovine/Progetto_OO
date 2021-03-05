@@ -4,12 +4,11 @@ import Codice.*;
 import DAO.*;
 
 public class Database {
+	//ATTRIBUTI
 	ArrayList<Impiegato> TabellaImpiegati = new ArrayList<>();
 	ArrayList<Progetto> TabellaProgetti = new ArrayList<>();
 	ArrayList<Meeting> TabellaMeeting = new ArrayList<>();
 	ArrayList<Skill> TabellaSkills = new ArrayList<>();
-	
-	
 	
 	//METODI
 	public void Inizializzazione() {
@@ -36,12 +35,17 @@ public class Database {
 	TabellaImpiegati.add(p4);
 	TabellaImpiegati.add(p5);
 	
+	TabellaSkills.add(s1);
+	TabellaSkills.add(s2);
+	TabellaSkills.add(s3);
+	TabellaSkills.add(s4);
 	}
 	
 	public void add_Impiegato(Impiegato imp) {
 		this.TabellaImpiegati.add(imp);
-		for (Impiegato i: TabellaImpiegati) {
-			for(Skill s: i.Abilità) {
+		for(Impiegato i:TabellaImpiegati) {
+			System.out.println("Ecco le skill dell'impiegato "+i.getNome()+" "+i.getCognome());
+			for(Skill s:i.getSkills()) {
 				System.out.println(s.getNome());
 			}
 		}
@@ -49,9 +53,6 @@ public class Database {
 	
 	public void add_Progetto(Progetto pro) {
 		this.TabellaProgetti.add(pro);
-		for (Progetto p: TabellaProgetti) {
-			System.out.println(p.Titolo);
-		}
 	}
 
 	public void add_Meeting(Meeting mee) {
@@ -60,29 +61,21 @@ public class Database {
 	
 	public void add_Skill(Skill ski) {
 		this.TabellaSkills.add(ski);
-		for (Skill p: TabellaSkills) {
-			System.out.println(p.Nome);
-		}
 	}
-	
 	
 	public boolean ProgettoByTitolo(String titolo) {
 			boolean temp= false;
-
-			for(Progetto p: TabellaProgetti) {
-				if(titolo.equals(p.Titolo)) {
-					temp=true;
-				}
-			}
+			for(Progetto p: TabellaProgetti) if(titolo.equals(p.getTitolo())) temp=true;
 			return temp;
 	}
+	
 	public boolean isAbilità(String abilità) {
 		boolean temp= false;
-		for(Skill s:TabellaSkills) {
-			if(abilità.equals(s.Nome)) {
-				temp=true;
-			}
-		}
+		for(Skill s:TabellaSkills) if(abilità.equals(s.getNome())) temp=true;
 		return temp;
+	}
+	
+	public ArrayList<Skill> getSkills(){
+		return this.TabellaSkills;
 	}
 }

@@ -13,6 +13,7 @@ import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,8 +33,6 @@ public class CreazioneProgetto extends JFrame {
 
 	private JPanel contentPane;
 	Controller theController;
-	JComboBox<String> boxAmbiti;
-	JComboBox<String> boxTipologie;
 	JTextArea Campo_Titolo;
 	JFrame frame;
 
@@ -54,6 +53,18 @@ public class CreazioneProgetto extends JFrame {
 		Etichetta_Ambito.setBounds(88, 145, 46, 14);
 		contentPane.add(Etichetta_Ambito);
 		
+		JComboBox boxAmbiti = new JComboBox();
+		boxAmbiti.setModel(new DefaultComboBoxModel(new String[] {"Economia", "Medicina", "Informatica", "Ingegneria"}));
+		boxAmbiti.setBounds(215, 137, 137, 22);
+		boxAmbiti.setSelectedIndex(-1);
+		contentPane.add(boxAmbiti);
+		
+		JComboBox boxTipologie = new JComboBox();
+		boxTipologie.setModel(new DefaultComboBoxModel(new String[] {"Ricerca Sperimentale","Ricerca di base","Sviluppo Sperimentale","Ricerca Industriale"}));
+		boxTipologie.setBounds(215, 201, 137, 22);
+		boxTipologie.setSelectedIndex(-1);
+		contentPane.add(boxTipologie);
+		
 		JButton Bottone_Indietro = new JButton("Indietro");
 		Bottone_Indietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,8 +76,7 @@ public class CreazioneProgetto extends JFrame {
 		
 		JButton Bottone_Crea_Progetto = new JButton("Crea Progetto");
 		Bottone_Crea_Progetto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	
-				//System.out.println(boxAmbiti.getSelectedItem());
+			public void actionPerformed(ActionEvent e) {
 				if(boxTipologie.getSelectedIndex()==-1 || boxAmbiti.getSelectedIndex()==-1 || Campo_Titolo.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(frame, "Tutti i campi devono essere pieni!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 				}
@@ -76,32 +86,7 @@ public class CreazioneProgetto extends JFrame {
 			}
 		});
 		Bottone_Crea_Progetto.setBounds(380, 322, 120, 49);
-		contentPane.add(Bottone_Crea_Progetto);
-		
-		
-		String[] ambiti = {
-		         "Economia",
-		         "Medicina",
-		         "Informatica",
-		         "Ingegneria"      
-		};
-		
-		String[] tipologie = {
-		         "Ricerca Sperimentale",
-		         "Ricerca di base",
-		         "Sviluppo Sperimentale",
-		         "Ricerca Industriale"
-		};
-		
-		boxAmbiti = new JComboBox(ambiti);
-		boxAmbiti.setSelectedIndex(-1);
-		boxAmbiti.setBounds(215, 137, 137, 22);
-		contentPane.add(boxAmbiti);
-		
-		boxTipologie = new JComboBox(tipologie);
-		boxTipologie.setSelectedIndex(-1);
-		boxTipologie.setBounds(215, 201, 137, 22);
-		contentPane.add(boxTipologie);
+		contentPane.add(Bottone_Crea_Progetto);		
 		
 		JLabel Etichetta_Titolo_Progetto = new JLabel("Titolo Progetto");
 		Etichetta_Titolo_Progetto.setBounds(88, 49, 86, 14);

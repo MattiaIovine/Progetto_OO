@@ -18,4 +18,8 @@ public class SkillDAO {
 	}
 	return skill;
 	}
+	
+	public ArrayList<Skill> get_Skills_From_DB(Database DB){
+		return DB.getSkills();
+	}
 }

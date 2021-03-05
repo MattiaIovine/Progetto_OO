@@ -25,6 +25,8 @@ public class Controller {
 	AssunzioneImpiegato ai;
 	CreazioneProgetto cp;
 	SelezioneImpiegato si;
+	SelezionaFiltri sf;
+
 	
 	public static void main(String[] args) {
 		Controller c = new Controller();		
@@ -34,15 +36,9 @@ public class Controller {
 		DB.Inizializzazione();
 		fp = new FinestraPrincipale(this);
 		fp.setVisible(true);
-//		ArrayList<Impiegato> risultati = new ArrayList<>();
-//		si = new SelezioneImpiegato(this, risultati);
-//		si.setVisible(true);
-		//Assumi_Impiegato(null, "nuovo", null, null, null, 0);
-		//Assumi_Impiegato(null, "funziona",null,null,null,0);
-		
 	}
 	
-	//METODI GUI
+	//METODI
 	
 	public void Vista_Gestione_Progetti() {
 		fp.setVisible(false);
@@ -74,40 +70,27 @@ public class Controller {
 		cp.setVisible(true);
 	}
 	
-	
-	
-	//METODI CODICE
-	
-	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario, ArrayList<String> Abilità) {
+	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario, ArrayList<String> Abilità) {
 		ArrayList<Skill> SkillDiImpiegato=SDAO.add_Skill_To_DB(Abilità, DB);
-		if(SkillDiImpiegato.size()==0) {
-			IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
-		}
-		else {
-			IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
-		}
+		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
 		ai.setVisible(false);
 		fp.setVisible(true);
 	}
-	
-	
+
 	
 	public void Crea_Progetto(String Titolo ,String Tipologia, String Ambito) {
 		if(PDAO.isProgettoByTitolo(Titolo, DB)) {
 			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione", JOptionPane.WARNING_MESSAGE);
 		}
+//		else {
+//			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
+//			cp.setVisible(false);
+//			fp.setVisible(true);
+//		}
 		else {
-			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
 			cp.setVisible(false);
-			fp.setVisible(true);
+			sf= new SelezionaFiltri(SDAO.get_Skills_From_DB(DB), this);
+			sf.setVisible(true);
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

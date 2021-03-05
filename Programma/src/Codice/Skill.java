@@ -4,7 +4,7 @@ import Controller.Controller;
 public class Skill {
 	
 	//ATTRIBUTI
-	public String Nome;
+	private String Nome;
 	//Lista Persona??	
 	
 	public Skill(String nome) {
@@ -18,7 +18,6 @@ public class Skill {
 	public void setNome(String nome) {
 		Nome = nome;
 	}
-	
 	
 }
 
