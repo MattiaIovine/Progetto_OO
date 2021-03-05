@@ -21,7 +21,7 @@ public class Progetto {
 		Ambito = ambito;
 		Attivo = true;
 	}
-
+	
 	//GETTER E SETTER
 	public String getTitolo() {
 		return Titolo;

@@ -32,11 +32,11 @@ public class Controller {
 	
 	public Controller() {
 		DB.Inizializzazione();
-		//fp = new FinestraPrincipale(this);
-		//fp.setVisible(true);
-		ArrayList<Impiegato> risultati = new ArrayList<>();
-		si = new SelezioneImpiegato(this, risultati);
-		si.setVisible(true);
+		fp = new FinestraPrincipale(this);
+		fp.setVisible(true);
+//		ArrayList<Impiegato> risultati = new ArrayList<>();
+//		si = new SelezioneImpiegato(this, risultati);
+//		si.setVisible(true);
 		//Assumi_Impiegato(null, "nuovo", null, null, null, 0);
 		//Assumi_Impiegato(null, "funziona",null,null,null,0);
 		
@@ -78,11 +78,19 @@ public class Controller {
 	
 	//METODI CODICE
 	
-	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
-		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
+	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario, ArrayList<String> Abilità) {
+		ArrayList<Skill> SkillDiImpiegato=SDAO.add_Skill_To_DB(Abilità, DB);
+		if(SkillDiImpiegato.size()==0) {
+			IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, DB);
+		}
+		else {
+			IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
+		}
 		ai.setVisible(false);
-		fp.setVisible(true);	
+		fp.setVisible(true);
 	}
+	
+	
 	
 	public void Crea_Progetto(String Titolo ,String Tipologia, String Ambito) {
 		if(PDAO.isProgettoByTitolo(Titolo, DB)) {

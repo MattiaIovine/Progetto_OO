@@ -5,9 +5,21 @@ public class Skill {
 	
 	//ATTRIBUTI
 	public String Nome;
-	//public String Ambito;
-	//public String Tipologia;
-	//Lista Persona??
+	//Lista Persona??	
+	
+	public Skill(String nome) {
+		Nome = nome;
+	}
+	
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+	
+	
 }
 
 

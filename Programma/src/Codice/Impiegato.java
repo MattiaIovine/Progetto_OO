@@ -1,5 +1,6 @@
 package Codice;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Impiegato {
 	
@@ -12,10 +13,8 @@ public class Impiegato {
 	public String Telefono;
 	public float  Salario;
 	public int 	  Valutazione = 0;
-	public ArrayList<String> Tipologie = new ArrayList<>();
 	public ArrayList<Skill> Abilità = new ArrayList<>();
-	
-//	public ArrayList<Progetto> Lavori;
+	public ArrayList<Progetto> Lavori = new ArrayList<>();
 //	public ArrayList<Meeting> Partecipazioni;
 
 	
@@ -23,13 +22,22 @@ public class Impiegato {
 	
 	//COSTRUTTORE
 	public Impiegato(String cF, String nome, String cognome, String mail, String telefono, float salario) {
-		super();
 		CF = cF;
 		Nome = nome;
 		Cognome = cognome;
 		Mail = mail;
 		Telefono = telefono;
 		Salario = salario; 
+	}
+	
+	public void addSkill(Skill s) {
+		this.Abilità.add(s);
+	}
+	
+	public void addSkill(ArrayList<Skill> s) {
+		for(Skill abilità:s) {
+			this.Abilità.add(abilità);
+		}
 	}
 	
 	public String toString() {
