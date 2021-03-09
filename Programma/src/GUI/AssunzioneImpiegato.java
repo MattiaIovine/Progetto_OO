@@ -8,10 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Controller.Controller;
+
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 //import javax.swing.JDialog;
 
 import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -22,6 +25,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+import javax.swing.JList;
 //import java.awt.event.KeyAdapter;
 //import java.awt.event.KeyEvent;
 public class AssunzioneImpiegato extends JFrame {
@@ -42,7 +46,7 @@ public class AssunzioneImpiegato extends JFrame {
 	public AssunzioneImpiegato(Controller c) {
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 665, 526);
+		setBounds(100, 100, 822, 632);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -55,8 +59,17 @@ public class AssunzioneImpiegato extends JFrame {
 				theController.Torna_Finestra_Principale();
 			}
 		});
-		Bottone_Indietro.setBounds(10, 432, 89, 44);
+		Bottone_Indietro.setBounds(10, 517, 89, 44);
 		contentPane.add(Bottone_Indietro);
+		
+		DefaultListModel<String> newListModel = new DefaultListModel<String>();
+		
+		JList Lista_Skill = new JList();
+		Lista_Skill.setBounds(126, 407, 370, 93);
+		contentPane.add(Lista_Skill);
+		Lista_Skill.setModel(newListModel);
+		Lista_Skill.setVisible(true);
+		getContentPane().add(Lista_Skill,BorderLayout.SOUTH);
 		
 
 		JButton Bottone_Assumi_Impiegato = new JButton("Assumi Impiegato");
@@ -66,7 +79,6 @@ public class AssunzioneImpiegato extends JFrame {
 					if(!Campo_Nome.getText().isEmpty() && !Campo_Cognome.getText().isEmpty() && !Campo_Mail.getText().isEmpty() && Campo_Telefono.getText().length()>9) {
 						try {
 							if(Float.parseFloat(Campo_Salario.getText())>0.0) {
-								JOptionPane.showMessageDialog(frame, "Assunzione effettuata");
 								theController.Assumi_Impiegato(Campo_CF.getText() , Campo_Nome.getText(), Campo_Cognome.getText(), Campo_Mail.getText(), Campo_Telefono.getText(), Float.parseFloat(Campo_Salario.getText()), Abilità);
 						}
 							else JOptionPane.showMessageDialog(frame, "Il campo Salario deve essere positivo!", "Attenzione", JOptionPane.WARNING_MESSAGE);
@@ -79,7 +91,7 @@ public class AssunzioneImpiegato extends JFrame {
 				else JOptionPane.showMessageDialog(frame, "Il codice fiscale deve essere di 16 caratteri!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 			}
 		});
-		Bottone_Assumi_Impiegato.setBounds(473, 125, 137, 44);
+		Bottone_Assumi_Impiegato.setBounds(581, 132, 137, 44);
 		contentPane.add(Bottone_Assumi_Impiegato);
 		
 		JButton Bottone_Aggiungi_Skill = new JButton("Aggiungi Skill");
@@ -91,7 +103,9 @@ public class AssunzioneImpiegato extends JFrame {
 				else {
 					if(!Abilità.contains(Campo_Abilità.getText().trim())) {
 					Abilità.add(Campo_Abilità.getText().trim());
+					newListModel.addElement(Campo_Abilità.getText().trim());
 					Campo_Abilità.setText("");
+					
 					}
 					else {
 						JOptionPane.showMessageDialog(frame, "Inserire un'abilità diversa!","Attenzione", JOptionPane.ERROR_MESSAGE);
@@ -100,10 +114,9 @@ public class AssunzioneImpiegato extends JFrame {
 				}
 			}
 		});
-		Bottone_Aggiungi_Skill.setBounds(473, 329, 137, 44);
+		Bottone_Aggiungi_Skill.setBounds(581, 329, 137, 44);
 		contentPane.add(Bottone_Aggiungi_Skill);
 	
-		
 		
 		Campo_CF = new JTextField();
 		Campo_CF.setBounds(127, 50, 226, 30);
@@ -165,15 +178,27 @@ public class AssunzioneImpiegato extends JFrame {
 		Etichetta_Salario.setBounds(27, 263, 72, 14);
 		contentPane.add(Etichetta_Salario);
 		
-		JLabel Etichetta_Abilità = new JLabel("Abilit\u00E0");
-		Etichetta_Abilità.setBounds(27, 336, 72, 30);
-		contentPane.add(Etichetta_Abilità);
+		JLabel Etichetta_Skill = new JLabel("Skill");
+		Etichetta_Skill.setBounds(27, 336, 72, 30);
+		contentPane.add(Etichetta_Skill);
 		
 		Campo_Abilità = new JTextField();
-		Campo_Abilità.setBounds(127, 329, 278, 44);
+		Campo_Abilità.setBounds(127, 329, 369, 44);
 		contentPane.add(Campo_Abilità);
 		Campo_Abilità.setColumns(10);
 		
-	}
+		JLabel Etichetta_Skill_Ins = new JLabel("Skill Inserite");
+		Etichetta_Skill_Ins.setBounds(27, 434, 72, 30);
+		contentPane.add(Etichetta_Skill_Ins);
 		
+		JButton Bottone_Pulisci_Skill = new JButton("Pulisci Skill");
+		Bottone_Pulisci_Skill.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Abilità.clear();
+				newListModel.clear();
+			}
+		});
+		Bottone_Pulisci_Skill.setBounds(581, 434, 137, 30);
+		contentPane.add(Bottone_Pulisci_Skill);
+	}
 }

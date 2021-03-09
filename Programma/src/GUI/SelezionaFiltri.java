@@ -18,6 +18,9 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SelezionaFiltri extends JFrame {
 
@@ -52,6 +55,11 @@ public class SelezionaFiltri extends JFrame {
 		contentPane.add(Campo_Salario_Min);
 		Campo_Salario_Min.setColumns(10);
 		
+		Campo_Salario_Max = new JTextField();
+		Campo_Salario_Max.setBounds(250, 78, 86, 20);
+		contentPane.add(Campo_Salario_Max);
+		Campo_Salario_Max.setColumns(10);
+		
 		JLabel Etichetta_Valutazione = new JLabel("Valutazione");
 		Etichetta_Valutazione.setBounds(35, 36, 68, 14);
 		contentPane.add(Etichetta_Valutazione);
@@ -63,12 +71,7 @@ public class SelezionaFiltri extends JFrame {
 		JLabel Etichetta_Massimo = new JLabel("Massima");
 		Etichetta_Massimo.setBounds(264, 8, 46, 14);
 		contentPane.add(Etichetta_Massimo);
-		
-		Campo_Salario_Max = new JTextField();
-		Campo_Salario_Max.setBounds(250, 78, 86, 20);
-		contentPane.add(Campo_Salario_Max);
-		Campo_Salario_Max.setColumns(10);
-		
+
 		JLabel Etichetta_Salario = new JLabel("Salario");
 		Etichetta_Salario.setBounds(37, 81, 46, 14);
 		contentPane.add(Etichetta_Salario);
@@ -97,5 +100,24 @@ public class SelezionaFiltri extends JFrame {
 		JLabel Etichetta_Skill = new JLabel("Skill Richieste");
 		Etichetta_Skill.setBounds(37, 226, 83, 14);
 		contentPane.add(Etichetta_Skill);
+		
+		JButton Bottone_Seleziona_Filtri = new JButton("Seleziona Filtri");
+		Bottone_Seleziona_Filtri.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				theController.getImpiegatibyFiltri();
+			}
+		});
+		Bottone_Seleziona_Filtri.setBounds(425, 91, 118, 32);
+		contentPane.add(Bottone_Seleziona_Filtri);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				theController.RimuoviUltimoProgetto();
+			}
+		});
+		btnNewButton.setBounds(454, 295, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }

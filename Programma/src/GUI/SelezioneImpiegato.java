@@ -57,7 +57,7 @@ public class SelezioneImpiegato extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println(Risultati.get(list.getSelectedIndex()));
-				btnNewButton.setEnabled(false);
+				//theController.Completacreazioneprogetto(Risultati);
 			}	
 		});
 		btnNewButton.setBounds(419, 140, 89, 23);

@@ -12,7 +12,7 @@ public class SkillDAO {
 	for(String nome:Abilità) {
 		Skill s = new Skill(nome);
 		skill.add(s);
-		if(!DB.isAbilità(nome)) {
+		if(!DB.isSkill(nome)) {
 			DB.add_Skill(s);
 		}
 	}

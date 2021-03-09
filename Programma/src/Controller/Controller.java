@@ -71,26 +71,40 @@ public class Controller {
 	}
 	
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario, ArrayList<String> Abilità) {
+		if(!IDAO.isImpiegatoByCF(DB, cF)) {
+			JOptionPane.showMessageDialog(ai, "Assunzione effettuata");
 		ArrayList<Skill> SkillDiImpiegato=SDAO.add_Skill_To_DB(Abilità, DB);
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
 		ai.setVisible(false);
 		fp.setVisible(true);
+		}
+		else {
+			JOptionPane.showMessageDialog(ai, "E\' già esistente un Impiegato con questo codice fiscale", "Attenzione", JOptionPane.WARNING_MESSAGE);
+			
+		}
 	}
-
 	
 	public void Crea_Progetto(String Titolo ,String Tipologia, String Ambito) {
 		if(PDAO.isProgettoByTitolo(Titolo, DB)) {
 			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione", JOptionPane.WARNING_MESSAGE);
 		}
-//		else {
-//			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
-//			cp.setVisible(false);
-//			fp.setVisible(true);
-//		}
 		else {
+			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
 			cp.setVisible(false);
 			sf= new SelezionaFiltri(SDAO.get_Skills_From_DB(DB), this);
 			sf.setVisible(true);
 		}
+	}
+	
+	public void getImpiegatibyFiltri() {
+//		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri();
+		sf.setVisible(false);
+//		si=new SelezioneImpiegato(this, impiegatifiltrati);
+		si.setVisible(true);
+	}
+	
+	public void RimuoviUltimoProgetto() {
+		PDAO.RemoveLastProgetto(DB);
+		fp.setVisible(true);
 	}
 }

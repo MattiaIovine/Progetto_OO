@@ -13,4 +13,8 @@ public class ProgettoDAO {
 		Progetto p1 = new Progetto(Titolo, Tipologia, Ambito);
 		DB.add_Progetto(p1);
 	}
+
+	public void RemoveLastProgetto(Database DB) {
+		DB.RimuoviUltimoProgetto();
+	}
 }

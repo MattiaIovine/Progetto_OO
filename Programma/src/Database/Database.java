@@ -53,6 +53,9 @@ public class Database {
 	
 	public void add_Progetto(Progetto pro) {
 		this.TabellaProgetti.add(pro);
+		for(Progetto p:TabellaProgetti){
+			System.out.println("Titolo:"+p.getTitolo()+" Ambito:"+p.getAmbito()+" Tipologia:"+p.getTipologia());
+		}
 	}
 
 	public void add_Meeting(Meeting mee) {
@@ -69,13 +72,25 @@ public class Database {
 			return temp;
 	}
 	
-	public boolean isAbilità(String abilità) {
+	public boolean isSkill(String abilità) {
 		boolean temp= false;
 		for(Skill s:TabellaSkills) if(abilità.equals(s.getNome())) temp=true;
+		return temp;
+	}
+	
+	public boolean ImpiegatoByCF(String codfis) {
+		boolean temp=false;
+		for(Impiegato i: TabellaImpiegati) if (codfis.equals(i.getCF())) temp=true;
 		return temp;
 	}
 	
 	public ArrayList<Skill> getSkills(){
 		return this.TabellaSkills;
 	}
+
+	public void RimuoviUltimoProgetto() {
+		this.TabellaProgetti.remove(TabellaProgetti.size()-1);
+	}
+	
+	
 }
