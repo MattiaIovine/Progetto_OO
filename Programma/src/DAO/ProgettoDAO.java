@@ -1,6 +1,10 @@
 package DAO;
 import Controller.Controller;
 import Database.*;
+
+import java.util.ArrayList;
+
+import Codice.Impiegato;
 import Codice.Progetto;
 
 public class ProgettoDAO {
@@ -16,5 +20,9 @@ public class ProgettoDAO {
 
 	public void RemoveLastProgetto(Database DB) {
 		DB.RimuoviUltimoProgetto();
+	}
+
+	public void Add_Impiegati_to_Progetto_to_DB(ArrayList<Impiegato> scelti, Database DB) {
+		DB.Add_Impiegati_to_Progetto(scelti);
 	}
 }

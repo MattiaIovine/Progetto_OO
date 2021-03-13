@@ -9,7 +9,7 @@ public class Progetto {
 	private String Tipologia;
 	private String Ambito;
 	private boolean Attivo;
-	private ArrayList<Impiegato> Componenti;
+	private ArrayList<Impiegato> Componenti = new ArrayList<>();
 	
 	
 	//CONSTRUTTORE
@@ -52,6 +52,12 @@ public class Progetto {
 	
 	public ArrayList<Impiegato> getComponenti(){
 		return this.Componenti;
+	}
+
+	public void setComponenti(ArrayList<Impiegato> scelti) {
+		for(Impiegato i:scelti) {
+			this.Componenti.add(i);
+		}	
 	}
 	
 }

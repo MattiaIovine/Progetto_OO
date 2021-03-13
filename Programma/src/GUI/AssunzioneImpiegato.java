@@ -47,6 +47,7 @@ public class AssunzioneImpiegato extends JFrame {
 
 	
 	public AssunzioneImpiegato(Controller c) {
+		setTitle("Assunzione Impiegato");
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 822, 632);

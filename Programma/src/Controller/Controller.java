@@ -72,15 +72,14 @@ public class Controller {
 	
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario, ArrayList<String> Abilità) {
 		if(!IDAO.isImpiegatoByCF(DB, cF)) {
-			JOptionPane.showMessageDialog(ai, "Assunzione effettuata");
+			JOptionPane.showMessageDialog(fp, "Assunzione effettuata");
 		ArrayList<Skill> SkillDiImpiegato=SDAO.add_Skill_To_DB(Abilità, DB);
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
 		ai.setVisible(false);
 		fp.setVisible(true);
 		}
 		else {
-			JOptionPane.showMessageDialog(ai, "E\' già esistente un Impiegato con questo codice fiscale", "Attenzione", JOptionPane.WARNING_MESSAGE);
-			
+			JOptionPane.showMessageDialog(ai, "E\' già esistente un Impiegato con questo codice fiscale", "Attenzione", JOptionPane.WARNING_MESSAGE);	
 		}
 	}
 	
@@ -99,13 +98,30 @@ public class Controller {
 	public void getImpiegatibyFiltri(Integer Valutazione, Double Salario, String Ambito, ArrayList<Skill> skillSelezionate) {
 		System.out.println(Valutazione+" "+Salario+" "+Ambito+" ");
 		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri(Valutazione, Salario, Ambito, skillSelezionate, DB);
-		sf.setVisible(false);
-//		si=new SelezioneImpiegato(this, impiegatifiltrati);
-//		si.setVisible(true);
+		if(impiegatifiltrati.size()>0) {
+			sf.setVisible(false);
+			si=new SelezioneImpiegato(this, impiegatifiltrati);
+			si.setVisible(true);
+		} else {
+			JOptionPane.showMessageDialog(sf, "Non esistono Impiegati appartenenti a questi criteri di ricerca!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+		}
 	}
 	
 	public void RimuoviUltimoProgetto() {
 		PDAO.RemoveLastProgetto(DB);
 		fp.setVisible(true);
+		JOptionPane.showMessageDialog(fp, "Progetto cancellato.","", JOptionPane.PLAIN_MESSAGE);
+	}
+
+	public void Aggiungi_Impiegati(ArrayList<Impiegato> scelti) {
+		PDAO.Add_Impiegati_to_Progetto_to_DB(scelti, DB);
+		si.setVisible(false);
+		fp.setVisible(true);
+		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","yay", JOptionPane.PLAIN_MESSAGE);
+	}
+
+	public void Torna_Filtri() {
+		si.setVisible(false);
+		sf.setVisible(true);		
 	}
 }

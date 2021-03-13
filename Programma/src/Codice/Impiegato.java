@@ -15,7 +15,7 @@ public class Impiegato {
 	private int 	  Valutazione = 0;
 	private ArrayList<Skill> Abilità = new ArrayList<>();
 	private ArrayList<Progetto> Lavori = new ArrayList<>();
-//	public ArrayList<Meeting> Partecipazioni;
+	private ArrayList<Meeting> Partecipazioni = new ArrayList<>();
 
 	
 	//Controller theController;
@@ -45,7 +45,7 @@ public class Impiegato {
 	}
 	
 	public String toString() {
-		return(this.CF+" "+this.Nome+" "+this.Cognome+" "+this.Salario);
+		return("CF: "+this.CF+" Nome: "+this.Nome+" Cognome: "+this.Cognome+" Salario: "+this.Salario+" Valutazione:"+this.Valutazione);
 	}
 	
 	//METODI
@@ -92,6 +92,23 @@ public class Impiegato {
 		Valutazione = valutazione;
 	}
 	
-	
+	public boolean isambito(String ambito) {
+		boolean temp=false;
+		if(!ambito.equals("Qualsiasi")) {
+			for(Progetto p:Lavori) {
+				if(ambito.equals(p.getAmbito())) temp=true;
+				System.out.println("L'ambito è "+p.getAmbito());
+//				if(temp) break;
+			}
+		}
+		else {
+			temp=true;
+		}
+		return temp;
+	}
+
+	public void addProgetto(Progetto progetto) {
+		this.Lavori.add(progetto);
+	}
 	
 }

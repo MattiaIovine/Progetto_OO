@@ -42,6 +42,7 @@ public class SelezionaFiltri extends JFrame {
 	Controller theController;
 
 	public SelezionaFiltri(ArrayList<Skill> listaskill, Controller c) {
+		setTitle("Selezione Filtri");
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 586, 395);

@@ -27,7 +27,7 @@ public class ImpiegatoDAO {
 	}
 
 	public ArrayList<Impiegato> getimpiegatobyfiltri(Integer valutazione, Double salario, String ambito, ArrayList<Skill> skillSelezionate, Database dB) {
-		return null;
+		return dB.ImpiegatiByFiltri(valutazione, salario, ambito, skillSelezionate);
 	}
 	
 	

@@ -12,11 +12,17 @@ public class Database {
 	
 	//METODI
 	public void Inizializzazione() {
-	Impiegato p1 = new Impiegato("mytg5643", "Mario", "Rossi", "mario.rossi@libero.it","0207654654",1200);
+	Impiegato p1 = new Impiegato("mytg5643", "Mario", "Rossi", "mario.rossi@libero.it","0207654654",3500);
 	Impiegato p2 = new Impiegato("uytf6443", "Mattia", "Iovine", "matt.iovine@studenti.unina.it","0810886549",1200);
-	Impiegato p3 = new Impiegato("4edxtc43", "Felice", "Esposito", "felice.esposito9@studenti.unina.it","0813246584",1200);
-	Impiegato p4 = new Impiegato("nbggt643", "Gabriele", "Belardo", "ga.belardo@studenti.unina.it","0207658874",1200);
-	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdi@libero.it","020765876",1200);
+	Impiegato p3 = new Impiegato("4edxtc43", "Felice", "Esposito", "felice.esposito9@studenti.unina.it","0813246584",1500);
+	Impiegato p4 = new Impiegato("nbggt643", "Gabriele", "Belardo", "ga.belardo@studenti.unina.it","0207658874",2000);
+	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdi@libero.it","020765876",2300);
+	
+	p1.setValutazione(21);
+	p2.setValutazione(120);
+	p3.setValutazione(2);
+	p4.setValutazione(42);
+	p5.setValutazione(60);
 	
 	Skill s1= new Skill("skill1");
 	Skill s2= new Skill("skill2");
@@ -27,7 +33,7 @@ public class Database {
 	p2.addSkill(s4);	p2.addSkill(s3);
 	p3.addSkill(s2);
 	p4.addSkill(s1);	p4.addSkill(s3);
-	p5.addSkill(s4); 	p5.addSkill(s1); 	p5.addSkill(s2); 	p5.addSkill(s3);
+	p5.addSkill(s4);  	p5.addSkill(s2); 	p5.addSkill(s3);
 	
 	TabellaImpiegati.add(p1);
 	TabellaImpiegati.add(p2);
@@ -93,6 +99,32 @@ public class Database {
 
 	public void RimuoviUltimoProgetto() {
 		this.TabellaProgetti.remove(TabellaProgetti.size()-1);
+	}
+
+	public ArrayList<Impiegato> ImpiegatiByFiltri(Integer valutazione, Double salario, String ambito, ArrayList<Skill> skillSelezionate) {
+		ArrayList<Impiegato> ImpiegatiFiltrati = new ArrayList<>();
+		for(Impiegato i:TabellaImpiegati) {
+			ArrayList<Skill> SkilldiImpiegato= i.getSkills();
+			boolean skilltrovate = true;
+			for(Skill s:skillSelezionate) {
+				if(!SkilldiImpiegato.contains(s)) {
+					skilltrovate=false;
+				}
+			}
+			if(i.getSalario()>=salario && i.getValutazione()>=valutazione && i.isambito(ambito) && skilltrovate) {
+				ImpiegatiFiltrati.add(i);
+			}
+		}
+		return ImpiegatiFiltrati;
+	}
+
+	public void Add_Impiegati_to_Progetto(ArrayList<Impiegato> scelti) {
+		TabellaProgetti.get(TabellaProgetti.size()-1).setComponenti(scelti);
+		for(Impiegato i:TabellaImpiegati) {
+			if(scelti.contains(i)) {
+				i.addProgetto(TabellaProgetti.get(TabellaProgetti.size()-1));
+			}	
+		}
 	}
 	
 	
