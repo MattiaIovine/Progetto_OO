@@ -81,7 +81,7 @@ public class CreazioneProgetto extends JFrame {
 					JOptionPane.showMessageDialog(frame, "Tutti i campi devono essere pieni!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 				}
 				else {
-					theController.Crea_Progetto(Campo_Titolo.getText(), boxTipologie.getSelectedItem().toString(), boxAmbiti.getSelectedItem().toString());
+					theController.Crea_Progetto(Campo_Titolo.getText(),(String) boxTipologie.getSelectedItem(),(String) boxAmbiti.getSelectedItem());
 				}
 			}
 		});

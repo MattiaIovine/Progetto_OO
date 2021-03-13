@@ -64,6 +64,9 @@ public class Database {
 	
 	public void add_Skill(Skill ski) {
 		this.TabellaSkills.add(ski);
+		for(Skill s:TabellaSkills) {
+			System.out.println(s.getNome());
+		}
 	}
 	
 	public boolean ProgettoByTitolo(String titolo) {

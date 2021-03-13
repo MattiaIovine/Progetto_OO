@@ -96,11 +96,12 @@ public class Controller {
 		}
 	}
 	
-	public void getImpiegatibyFiltri() {
-//		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri();
+	public void getImpiegatibyFiltri(Integer Valutazione, Double Salario, String Ambito, ArrayList<Skill> skillSelezionate) {
+		System.out.println(Valutazione+" "+Salario+" "+Ambito+" ");
+		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri(Valutazione, Salario, Ambito, skillSelezionate, DB);
 		sf.setVisible(false);
 //		si=new SelezioneImpiegato(this, impiegatifiltrati);
-		si.setVisible(true);
+//		si.setVisible(true);
 	}
 	
 	public void RimuoviUltimoProgetto() {

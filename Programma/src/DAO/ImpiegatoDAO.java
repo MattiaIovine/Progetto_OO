@@ -25,6 +25,10 @@ public class ImpiegatoDAO {
 	public boolean isImpiegatoByCF (Database DB, String codfis) {
 		return DB.ImpiegatoByCF(codfis);
 	}
+
+	public ArrayList<Impiegato> getimpiegatobyfiltri(Integer valutazione, Double salario, String ambito, ArrayList<Skill> skillSelezionate, Database dB) {
+		return null;
+	}
 	
 	
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.NumberFormatter;
 
 import Codice.Impiegato;
 import Codice.Skill;
@@ -15,12 +16,20 @@ import Controller.Controller;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.JSlider;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
 public class SelezionaFiltri extends JFrame {
 
@@ -29,72 +38,58 @@ public class SelezionaFiltri extends JFrame {
 	private JTextField Campo_Val_Max;
 	private JTextField Campo_Salario_Min;
 	private JTextField Campo_Salario_Max;
+	JFrame frame;
 	Controller theController;
 
 	public SelezionaFiltri(ArrayList<Skill> listaskill, Controller c) {
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 569, 380);
+		setBounds(100, 100, 586, 395);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Campo_Val_Min = new JTextField();
-		Campo_Val_Min.setBounds(130, 33, 86, 20);
-		contentPane.add(Campo_Val_Min);
-		Campo_Val_Min.setColumns(10);
-		
-		Campo_Val_Max = new JTextField();
-		Campo_Val_Max.setBounds(250, 33, 86, 20);
-		contentPane.add(Campo_Val_Max);
-		Campo_Val_Max.setColumns(10);
-		
-		Campo_Salario_Min = new JTextField();
-		Campo_Salario_Min.setBounds(130, 78, 86, 20);
-		contentPane.add(Campo_Salario_Min);
-		Campo_Salario_Min.setColumns(10);
-		
-		Campo_Salario_Max = new JTextField();
-		Campo_Salario_Max.setBounds(250, 78, 86, 20);
-		contentPane.add(Campo_Salario_Max);
-		Campo_Salario_Max.setColumns(10);
-		
-		JLabel Etichetta_Valutazione = new JLabel("Valutazione");
-		Etichetta_Valutazione.setBounds(35, 36, 68, 14);
-		contentPane.add(Etichetta_Valutazione);
-		
-		JLabel Etichetta_Minimo = new JLabel("Minima");
-		Etichetta_Minimo.setBounds(147, 8, 46, 14);
-		contentPane.add(Etichetta_Minimo);
-		
-		JLabel Etichetta_Massimo = new JLabel("Massima");
-		Etichetta_Massimo.setBounds(264, 8, 46, 14);
-		contentPane.add(Etichetta_Massimo);
+		JSpinner Spinner_Valutazione = new JSpinner();
+		Spinner_Valutazione.setModel(new SpinnerNumberModel(0, 0, 1000, 10)); 
+		Spinner_Valutazione.setBounds(165, 33, 68, 20);
+		contentPane.add(Spinner_Valutazione);
 
-		JLabel Etichetta_Salario = new JLabel("Salario");
-		Etichetta_Salario.setBounds(37, 81, 46, 14);
+		JSpinner Spinner_Salario = new JSpinner();
+		Spinner_Salario.setModel(new SpinnerNumberModel(0.0, 0.0, 1000000.0, 50.0));
+		Spinner_Salario.setBounds(165, 78, 68, 20);
+		contentPane.add(Spinner_Salario);
+		
+		JLabel Etichetta_Valutazione = new JLabel("Valutazione Minima");
+		Etichetta_Valutazione.setBounds(35, 36, 103, 14);
+		contentPane.add(Etichetta_Valutazione);
+
+		JLabel Etichetta_Salario = new JLabel("Salario Minimo");
+		Etichetta_Salario.setBounds(37, 81, 83, 14);
 		contentPane.add(Etichetta_Salario);
 		
 		JLabel Etichetta_Ambito = new JLabel("Ambito");
-		Etichetta_Ambito.setBounds(37, 123, 46, 14);
+		Etichetta_Ambito.setBounds(35, 139, 46, 14);
 		contentPane.add(Etichetta_Ambito);
 		
 		JComboBox BoxAmbito = new JComboBox();
 		BoxAmbito.setModel(new DefaultComboBoxModel(new String[] {"Qualsiasi", "Economia", "Medicina", "Informatica", "Ingegneria"}));
-		BoxAmbito.setBounds(130, 119, 91, 22);
+		BoxAmbito.setBounds(165, 135, 91, 22);
 		contentPane.add(BoxAmbito);
 		
-		DefaultListModel<String> newListModel = new DefaultListModel<String>();
-		for(Skill s:listaskill) {
-			newListModel.addElement(s.getNome());
-		}
+		DefaultListModel<String> ModelloAbilità = new DefaultListModel<String>();
+		for(Skill s:listaskill) {ModelloAbilità.addElement(s.getNome());}
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(130, 189, 287, 81);
+		contentPane.add(scrollPane);
 		JList Lista_Skill = new JList();
-		Lista_Skill.setBounds(130, 189, 287, 97);
-		contentPane.add(Lista_Skill);
-		Lista_Skill.setModel(newListModel);
+		Lista_Skill.setModel(ModelloAbilità);
+		scrollPane.setViewportView(Lista_Skill);
+
 		Lista_Skill.setVisible(true);
-		getContentPane().add(Lista_Skill,BorderLayout.SOUTH);
 		
 		
 		JLabel Etichetta_Skill = new JLabel("Skill Richieste");
@@ -104,20 +99,32 @@ public class SelezionaFiltri extends JFrame {
 		JButton Bottone_Seleziona_Filtri = new JButton("Seleziona Filtri");
 		Bottone_Seleziona_Filtri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				theController.getImpiegatibyFiltri();
+				ArrayList<Skill> SkillSelezionate = new ArrayList<>();
+				for (int i:Lista_Skill.getSelectedIndices()) {
+					SkillSelezionate.add(listaskill.get(i));
+				}
+				try {
+				    Spinner_Valutazione.commitEdit();
+				    Spinner_Salario.commitEdit();
+				} catch ( java.text.ParseException pe ) {
+					JOptionPane.showMessageDialog(frame, "Errore!","Attenzione", JOptionPane.ERROR_MESSAGE);
+				}
+				theController.getImpiegatibyFiltri((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) BoxAmbito.getSelectedItem(), SkillSelezionate);
 			}
 		});
 		Bottone_Seleziona_Filtri.setBounds(425, 91, 118, 32);
 		contentPane.add(Bottone_Seleziona_Filtri);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Cancella Creazione Progetto");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				theController.RimuoviUltimoProgetto();
 			}
 		});
-		btnNewButton.setBounds(454, 295, 89, 23);
+		btnNewButton.setBounds(316, 295, 227, 23);
 		contentPane.add(btnNewButton);
+		
+
 	}
 }
