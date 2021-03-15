@@ -22,6 +22,9 @@ public class Progetto {
 		Attivo = true;
 	}
 	
+	public String toString() {
+		return("Titolo: "+this.Titolo+" -Tipologia: "+this.Tipologia+" -Ambito: "+this.Ambito);
+	}
 	//GETTER E SETTER
 	public String getTitolo() {
 		return Titolo;
@@ -58,6 +61,18 @@ public class Progetto {
 		for(Impiegato i:scelti) {
 			this.Componenti.add(i);
 		}	
+	}
+
+	public Impiegato getProjectManager() {
+		return this.Componenti.get(0);
+	}
+	
+	public ArrayList<Impiegato> getPartecipanti(){
+		ArrayList<Impiegato> partecipanti = new ArrayList<>();
+		for(Impiegato i:this.Componenti.subList(1,this.Componenti.size())) {
+			partecipanti.add(i);
+		}
+		return partecipanti;
 	}
 	
 }

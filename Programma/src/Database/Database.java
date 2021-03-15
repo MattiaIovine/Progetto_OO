@@ -96,6 +96,18 @@ public class Database {
 	public ArrayList<Skill> getSkills(){
 		return this.TabellaSkills;
 	}
+	
+	public ArrayList<Progetto> get_Progetti_Attivi() {
+		ArrayList<Progetto> attivi = new ArrayList<>();
+		for(Progetto p:TabellaProgetti) if(p.isAttivo()) attivi.add(p);
+		return attivi;
+	}
+	
+	public ArrayList<Progetto> get_Progetti_Terminati() {
+		ArrayList<Progetto> terminati = new ArrayList<>();
+		for(Progetto p:TabellaProgetti) if(!p.isAttivo()) terminati.add(p);
+		return terminati;
+	}
 
 	public void RimuoviUltimoProgetto() {
 		this.TabellaProgetti.remove(TabellaProgetti.size()-1);
@@ -126,6 +138,12 @@ public class Database {
 			}	
 		}
 	}
+
+	public void Termina_Progetto(Progetto progetto) {
+		TabellaProgetti.get(TabellaProgetti.indexOf(progetto)).setAttivo_false();
+	}
+
+
 	
 	
 }

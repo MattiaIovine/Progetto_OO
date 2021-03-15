@@ -68,6 +68,7 @@ public class CreazioneProgetto extends JFrame {
 		JButton Bottone_Indietro = new JButton("Indietro");
 		Bottone_Indietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				theController.Torna_Gestione_Progetto();
 			}
 		});

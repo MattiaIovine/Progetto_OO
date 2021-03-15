@@ -36,9 +36,15 @@ public class GestioneProgetti extends JFrame {
 		Bottone_Indietro.setBounds(426, 328, 89, 44);
 		contentPane.add(Bottone_Indietro);
 		
-		JButton Bottone_VediProgetti = new JButton("Visualizza Progetti Attivi");
-		Bottone_VediProgetti.setBounds(60, 68, 232, 44);
-		contentPane.add(Bottone_VediProgetti);
+		JButton Bottone_Progetti_Attivi = new JButton("Visualizza Progetti Attivi");
+		Bottone_Progetti_Attivi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				theController.Vista_Progetti_Attivi();
+			}
+		});
+		Bottone_Progetti_Attivi.setBounds(56, 101, 281, 44);
+		contentPane.add(Bottone_Progetti_Attivi);
 		
 		JButton Bottone_CreaProgetto = new JButton("Crea Nuovo Progetto");
 		Bottone_CreaProgetto.addActionListener(new ActionListener() {
@@ -46,16 +52,17 @@ public class GestioneProgetti extends JFrame {
 				theController.Vista_Creazione_Progetto();
 			}
 		});
-		Bottone_CreaProgetto.setBounds(60, 209, 361, 44);
+		Bottone_CreaProgetto.setBounds(56, 247, 281, 44);
 		contentPane.add(Bottone_CreaProgetto);
 		
-		JButton Bottone_FineProgetto = new JButton("Termina Progetto");
-		Bottone_FineProgetto.addActionListener(new ActionListener() {
+		JButton Bottone_Progetti_Terminati = new JButton("Visualizza Progetti Terminati");
+		Bottone_Progetti_Terminati.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				theController.Vista_Progetti_Terminati();
 			}
 		});
-		Bottone_FineProgetto.setBounds(60, 137, 197, 44);
-		contentPane.add(Bottone_FineProgetto);
+		Bottone_Progetti_Terminati.setBounds(56, 174, 281, 44);
+		contentPane.add(Bottone_Progetti_Terminati);
 	}
 
 }

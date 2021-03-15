@@ -48,6 +48,10 @@ public class Impiegato {
 		return("CF: "+this.CF+" Nome: "+this.Nome+" Cognome: "+this.Cognome+" Salario: "+this.Salario+" Valutazione:"+this.Valutazione);
 	}
 	
+	public String toStringMinimo() {
+		return ("CF:"+this.CF+ " Nome: "+this.Nome+" Cognome: "+this.Cognome);
+	}
+	
 	//METODI
 	public String getCF() {
 		return CF;
@@ -110,5 +114,7 @@ public class Impiegato {
 	public void addProgetto(Progetto progetto) {
 		this.Lavori.add(progetto);
 	}
+
+
 	
 }

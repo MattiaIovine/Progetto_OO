@@ -26,6 +26,10 @@ public class Controller {
 	CreazioneProgetto cp;
 	SelezioneImpiegato si;
 	SelezionaFiltri sf;
+	ProgettiAttivi pa;
+	DettagliProgetto dp;
+	ProgettiTerminati pt;
+	TerminazioneProgetto tp;
 
 	
 	public static void main(String[] args) {
@@ -60,7 +64,6 @@ public class Controller {
 	}
 	 
 	public void Torna_Gestione_Progetto() {
-		cp.setVisible(false);
 		gp.setVisible(true);
 	}
 	
@@ -68,6 +71,49 @@ public class Controller {
 		gp.setVisible(false);
 		cp= new CreazioneProgetto(this);
 		cp.setVisible(true);
+	}
+	
+	public void Vista_Progetti_Attivi() {
+		ArrayList<Progetto> progettiattivi = PDAO.get_Progetti_Attivi_From_DB(DB);
+		if(progettiattivi.size()>0) {
+			pa= new ProgettiAttivi(progettiattivi, this);
+			pa.setVisible(true);
+		}
+		else {
+			JOptionPane.showMessageDialog(gp, "Non sono presenti progetti attivi!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+			gp.setVisible(true);
+			}
+	}
+	
+	public void Vista_Progetti_Terminati() {
+		ArrayList<Progetto> progettiterminati = PDAO.get_Progetti_Terminati_From_DB(DB);
+		if(progettiterminati.size()>0) {
+			gp.setVisible(false);
+			pt= new ProgettiTerminati(progettiterminati, this);
+			pt.setVisible(true);
+		}
+		else {JOptionPane.showMessageDialog(gp, "Non sono presenti progetti terminati!", "Attenzione", JOptionPane.WARNING_MESSAGE);}
+	}
+	
+	public void Vista_Termina_Progetto(Progetto progetto) {
+		pa.setVisible(false);
+		tp= new TerminazioneProgetto(this, progetto);
+		tp.setVisible(true);
+	}
+	
+	public void Torna_Progetti_Attivi() {
+		dp.setVisible(false);
+		pa.setVisible(true);		
+	}
+	
+	public void Torna_Progetti_Terminati() {
+		dp.setVisible(false);
+		pt.setVisible(true);
+	}
+	
+	public void Torna_Filtri() {
+		si.setVisible(false);
+		sf.setVisible(true);		
 	}
 	
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario, ArrayList<String> Abilità) {
@@ -120,8 +166,28 @@ public class Controller {
 		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","yay", JOptionPane.PLAIN_MESSAGE);
 	}
 
-	public void Torna_Filtri() {
-		si.setVisible(false);
-		sf.setVisible(true);		
+	public void Termina_Progetto(Progetto progetto, Integer integer) {
+		PDAO.Termina_Progetto_in_DB(progetto, DB);
+		tp.setVisible(false);
+		JOptionPane.showMessageDialog(fp, "Progetto terminato correttamente","yay", JOptionPane.PLAIN_MESSAGE);
+		this.Vista_Progetti_Attivi();
+
+
 	}
+
+	public void Visualizza_Dettagli_Progetto(Progetto progetto) {
+		pa.setVisible(false);
+		dp = new DettagliProgetto(this, progetto);
+		dp.setVisible(true);
+	}
+
+
+
+
+
+
+
+
+
+
 }
