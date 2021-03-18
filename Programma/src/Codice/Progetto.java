@@ -1,5 +1,4 @@
 package Codice;
-import Controller.Controller;
 import java.util.ArrayList;
 
 public class Progetto {
@@ -44,7 +43,7 @@ public class Progetto {
 	public void setAmbito(String ambito) {
 		Ambito = ambito;
 	}
-
+	
 	public boolean isAttivo() {
 		return Attivo;
 	}

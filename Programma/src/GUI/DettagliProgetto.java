@@ -38,6 +38,18 @@ public class DettagliProgetto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JButton Bottone_Meeting = new JButton("Organizza Meeting");
+		Bottone_Meeting.setBounds(498, 50, 159, 23);
+		Bottone_Meeting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				theController.Crea_Meeting(progetto);
+			}	
+		});
+		if(progetto.isAttivo()) {
+			contentPane.add(Bottone_Meeting);
+		}
+		
+		
 		ArrayList<Impiegato> partecipanti=progetto.getPartecipanti();
 		DefaultListModel<String> modellopartecipanti = new DefaultListModel<String>();
 		for(Impiegato i:partecipanti) {
@@ -70,7 +82,7 @@ public class DettagliProgetto extends JFrame {
 		Etichetta_Tipologia.setBounds(44, 127, 83, 14);
 		contentPane.add(Etichetta_Tipologia);
 		
-		JLabel Etichetta_Project_Manager = new JLabel("Project_Manager:");
+		JLabel Etichetta_Project_Manager = new JLabel("Project Manager:");
 		Etichetta_Project_Manager.setBounds(44, 177, 119, 14);
 		contentPane.add(Etichetta_Project_Manager);
 		
@@ -102,6 +114,8 @@ public class DettagliProgetto extends JFrame {
 		JLabel Campo_Project_Manager = new JLabel(progetto.getProjectManager().toStringMinimo());
 		Campo_Project_Manager.setBounds(173, 177, 296, 14);
 		contentPane.add(Campo_Project_Manager);
+		
+
 		
 	}
 }

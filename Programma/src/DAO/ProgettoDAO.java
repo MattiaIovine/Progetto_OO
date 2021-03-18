@@ -1,5 +1,4 @@
 package DAO;
-import Controller.Controller;
 import Database.*;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class ProgettoDAO {
 		return DB.get_Progetti_Terminati();
 	}
 
-	public void Termina_Progetto_in_DB(Progetto progetto, Database DB) {
-		DB.Termina_Progetto(progetto);
+	public void Termina_Progetto_in_DB(Progetto progetto, int valutazione, Database DB) {
+		DB.Termina_Progetto(progetto, valutazione);
 	}
 }

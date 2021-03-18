@@ -1,5 +1,4 @@
 package Controller;
-import java.awt.Component;
 
 import javax.swing.JOptionPane;
 
@@ -8,8 +7,6 @@ import DAO.*;
 import GUI.*;
 import Database.*;
 
-
-//
 import java.util.ArrayList;
 public class Controller {
 	
@@ -19,9 +16,9 @@ public class Controller {
 	SkillDAO SDAO = new SkillDAO();
 	Database DB= new Database();
 	
-	FinestraPrincipale fp ;
+	FinestraPrincipale fp;
 	GestioneProgetti gp;
-	GestioneMeeting gm;
+	VisualizzaMeeting vm;
 	AssunzioneImpiegato ai;
 	CreazioneProgetto cp;
 	SelezioneImpiegato si;
@@ -30,6 +27,7 @@ public class Controller {
 	DettagliProgetto dp;
 	ProgettiTerminati pt;
 	TerminazioneProgetto tp;
+	CreaMeeting cm;
 
 	
 	public static void main(String[] args) {
@@ -49,10 +47,10 @@ public class Controller {
 		gp= new GestioneProgetti(this);
 		gp.setVisible(true);
 	}
-	public void Vista_Gestione_Meeting() {
+	public void Vista_Visualizza_Meeting() {
 		fp.setVisible(false);
-		gm= new GestioneMeeting(this);
-		gm.setVisible(true);
+		vm= new VisualizzaMeeting(this);
+		vm.setVisible(true);
 	}
 	public void Vista_Assunzione_Impiegato() {
 		fp.setVisible(false);
@@ -144,7 +142,7 @@ public class Controller {
 	public void getImpiegatibyFiltri(Integer Valutazione, Double Salario, String Ambito, ArrayList<Skill> skillSelezionate) {
 		System.out.println(Valutazione+" "+Salario+" "+Ambito+" ");
 		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri(Valutazione, Salario, Ambito, skillSelezionate, DB);
-		if(impiegatifiltrati.size()>0) {
+		if(impiegatifiltrati.size()>1) {
 			sf.setVisible(false);
 			si=new SelezioneImpiegato(this, impiegatifiltrati);
 			si.setVisible(true);
@@ -166,19 +164,37 @@ public class Controller {
 		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","yay", JOptionPane.PLAIN_MESSAGE);
 	}
 
-	public void Termina_Progetto(Progetto progetto, Integer integer) {
-		PDAO.Termina_Progetto_in_DB(progetto, DB);
+	public void Termina_Progetto(Progetto progetto, int valutazione) {
+		PDAO.Termina_Progetto_in_DB(progetto, valutazione, DB);
 		tp.setVisible(false);
 		JOptionPane.showMessageDialog(fp, "Progetto terminato correttamente","yay", JOptionPane.PLAIN_MESSAGE);
 		this.Vista_Progetti_Attivi();
-
-
 	}
 
 	public void Visualizza_Dettagli_Progetto(Progetto progetto) {
 		pa.setVisible(false);
 		dp = new DettagliProgetto(this, progetto);
 		dp.setVisible(true);
+	}
+
+	public void Crea_Meeting(Progetto progetto) {
+		dp.setVisible(false);
+		cm= new CreaMeeting(this, progetto);
+		cm.setVisible(true);
+	}
+
+	public void Crea_Meeting_Telematico(Progetto progetto, String codice_stanza, int anno, int mese, int giorno, int ora, int minuto) {
+		MDAO.Organizza_Telematico_to_DB(progetto, codice_stanza, anno, mese, giorno, ora, minuto, DB);
+		cm.setVisible(false);
+		dp.setVisible(true);
+		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","yay", JOptionPane.PLAIN_MESSAGE);
+	}
+	
+	public void Crea_Meeting_Fisico(Progetto progetto, String sala_riunioni, int anno, int mese, int giorno, int ora, int minuto) {
+		MDAO.Organizza_Fisico_to_DB(progetto, sala_riunioni, anno, mese, giorno, ora, minuto, DB);	
+		cm.setVisible(false);
+		dp.setVisible(true);
+		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","yay", JOptionPane.PLAIN_MESSAGE);
 	}
 
 

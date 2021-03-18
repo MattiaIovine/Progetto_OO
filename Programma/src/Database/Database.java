@@ -1,7 +1,6 @@
 package Database;
 import java.util.ArrayList;
 import Codice.*;
-import DAO.*;
 
 public class Database {
 	//ATTRIBUTI
@@ -18,11 +17,16 @@ public class Database {
 	Impiegato p4 = new Impiegato("nbggt643", "Gabriele", "Belardo", "ga.belardo@studenti.unina.it","0207658874",2000);
 	Impiegato p5 = new Impiegato("njhg5643", "Anna", "Verdi", "anna.verdi@libero.it","020765876",2300);
 	
-	p1.setValutazione(21);
-	p2.setValutazione(120);
-	p3.setValutazione(2);
-	p4.setValutazione(42);
-	p5.setValutazione(60);
+	ArrayList<Impiegato> temp = new ArrayList<>();
+	
+	p1.addValutazione(21);
+	p2.addValutazione(120);
+	p3.addValutazione(2);
+	p4.addValutazione(42);
+	p5.addValutazione(60);
+	
+	Progetto pro1= new Progetto("i cavalli corrono fortissimo","Economia","Ricerca Sperimentale");
+	
 	
 	Skill s1= new Skill("skill1");
 	Skill s2= new Skill("skill2");
@@ -40,6 +44,13 @@ public class Database {
 	TabellaImpiegati.add(p3);
 	TabellaImpiegati.add(p4);
 	TabellaImpiegati.add(p5);
+	temp.add(p1);
+	temp.add(p2);
+	temp.add(p3);
+	temp.add(p4);
+	pro1.setComponenti(temp);
+	TabellaProgetti.add(pro1);
+	
 	
 	TabellaSkills.add(s1);
 	TabellaSkills.add(s2);
@@ -66,6 +77,9 @@ public class Database {
 
 	public void add_Meeting(Meeting mee) {
 		this.TabellaMeeting.add(mee);
+		for(Meeting m:TabellaMeeting) {
+			System.out.println(m.toString());
+		}
 	}
 	
 	public void add_Skill(Skill ski) {
@@ -139,8 +153,14 @@ public class Database {
 		}
 	}
 
-	public void Termina_Progetto(Progetto progetto) {
+	public void Termina_Progetto(Progetto progetto, int valutazione) {
 		TabellaProgetti.get(TabellaProgetti.indexOf(progetto)).setAttivo_false();
+		ArrayList<Impiegato> componenti=progetto.getComponenti();
+		for(Impiegato i:TabellaImpiegati) {
+			if(componenti.contains(i)) {
+				i.addValutazione(valutazione);
+			}
+		}
 	}
 
 

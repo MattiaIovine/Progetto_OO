@@ -2,7 +2,6 @@ package DAO;
 import java.util.ArrayList;
 
 import Codice.Skill;
-import Controller.Controller;
 import Database.*;
 
 public class SkillDAO {

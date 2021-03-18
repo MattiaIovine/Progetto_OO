@@ -10,12 +10,12 @@ import javax.swing.JButton;
 import Controller.Controller;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-public class GestioneMeeting extends JFrame {
+public class VisualizzaMeeting extends JFrame {
 	
 	private JPanel contentPane;
 	Controller theController;
 
-	public GestioneMeeting(Controller c) {
+	public VisualizzaMeeting(Controller c) {
 		theController = c;
 		setTitle("Gestione Meeting");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,11 +35,19 @@ public class GestioneMeeting extends JFrame {
 		Bottone_Indietro.setBounds(427, 316, 89, 44);
 		contentPane.add(Bottone_Indietro);
 		
-		JButton Bottone_VediMeeting = new JButton("Calendario Meeting");
+		JButton Bottone_VediMeeting = new JButton("Vedi Meeting");
+		Bottone_VediMeeting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		Bottone_VediMeeting.setBounds(48, 80, 169, 44);
 		contentPane.add(Bottone_VediMeeting);
 		
-		JButton Bottone_CreaMeeting = new JButton("Fissare Nuovo Meeting");
+		JButton Bottone_CreaMeeting = new JButton("Fissa Nuovo Meeting");
+		Bottone_CreaMeeting.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		Bottone_CreaMeeting.setBounds(48, 202, 169, 44);
 		contentPane.add(Bottone_CreaMeeting);
 	}

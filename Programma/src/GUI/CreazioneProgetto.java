@@ -53,14 +53,14 @@ public class CreazioneProgetto extends JFrame {
 		Etichetta_Ambito.setBounds(88, 145, 46, 14);
 		contentPane.add(Etichetta_Ambito);
 		
-		JComboBox boxAmbiti = new JComboBox();
-		boxAmbiti.setModel(new DefaultComboBoxModel(new String[] {"Economia", "Medicina", "Informatica", "Ingegneria"}));
+		JComboBox<String> boxAmbiti = new JComboBox<>();
+		boxAmbiti.setModel(new DefaultComboBoxModel<String>(new String[] {"Economia", "Medicina", "Informatica", "Ingegneria"}));
 		boxAmbiti.setBounds(215, 137, 137, 22);
 		boxAmbiti.setSelectedIndex(-1);
 		contentPane.add(boxAmbiti);
 		
-		JComboBox boxTipologie = new JComboBox();
-		boxTipologie.setModel(new DefaultComboBoxModel(new String[] {"Ricerca Sperimentale","Ricerca di base","Sviluppo Sperimentale","Ricerca Industriale"}));
+		JComboBox<String> boxTipologie = new JComboBox<>();
+		boxTipologie.setModel(new DefaultComboBoxModel<String>(new String[] {"Ricerca Sperimentale","Ricerca di base","Sviluppo Sperimentale","Ricerca Industriale"}));
 		boxTipologie.setBounds(215, 201, 137, 22);
 		boxTipologie.setSelectedIndex(-1);
 		contentPane.add(boxTipologie);

@@ -44,7 +44,7 @@ public class AssunzioneImpiegato extends JFrame {
 	private JTextField Campo_Abilità;
 	JFrame frame;
 	ArrayList<String> Abilità = new ArrayList<>();
-
+	
 	
 	public AssunzioneImpiegato(Controller c) {
 		setTitle("Assunzione Impiegato");
@@ -77,7 +77,6 @@ public class AssunzioneImpiegato extends JFrame {
 		scrollPane.setViewportView(Lista_Skill);
 		Lista_Skill.setModel(newListModel);
 		Lista_Skill.setVisible(true);
-		
 
 		JButton Bottone_Assumi_Impiegato = new JButton("Assumi Impiegato");
 		Bottone_Assumi_Impiegato.addActionListener(new ActionListener() {

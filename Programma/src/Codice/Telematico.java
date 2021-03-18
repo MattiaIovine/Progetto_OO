@@ -2,19 +2,21 @@ package Codice;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.Locale;
 
 public class Telematico extends Meeting{
 	
 
 	//ATTRIBUTI
 	public String Codice_Stanza;
-	
-	
-	
-	
-	public Telematico(String iD_Meeting, Date data, Time orario, Progetto argomento , String cod_stanza) {
-		super(iD_Meeting, data, orario, argomento);
-		Codice_Stanza = cod_stanza;
-	}
 
+	public Telematico(Progetto progetto, String codice_stanza, int anno, int mese, int giorno, int ora, int minuto) {
+		super(progetto, anno, mese, giorno, ora, minuto);
+		Codice_Stanza=codice_stanza;
+	}
+	
+	public String toString() {
+		return ("Progetto: "+this.getArgomento().getTitolo()+" Codice Stanza: "+Codice_Stanza+" Data: "+this.getData().getTime());
+	}
+	
 }

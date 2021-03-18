@@ -1,6 +1,5 @@
 package Codice;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Impiegato {
 	
@@ -92,17 +91,17 @@ public class Impiegato {
 	public int getValutazione() {
 		return Valutazione;
 	}
-	public void setValutazione(int valutazione) {
-		Valutazione = valutazione;
+	public void addValutazione(int valutazione) {
+		Valutazione+=valutazione;
 	}
 	
 	public boolean isambito(String ambito) {
 		boolean temp=false;
 		if(!ambito.equals("Qualsiasi")) {
 			for(Progetto p:Lavori) {
-				if(ambito.equals(p.getAmbito())) temp=true;
-				System.out.println("L'ambito è "+p.getAmbito());
-//				if(temp) break;
+				if(ambito.equals(p.getAmbito())) {
+					temp=true;
+				}
 			}
 		}
 		else {

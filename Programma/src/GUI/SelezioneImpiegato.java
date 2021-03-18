@@ -55,7 +55,7 @@ public class SelezioneImpiegato extends JFrame {
 		Lista_Impiegati.setModel(newListModel);
 		Lista_Impiegati.setVisible(true);
 	
-		JLabel Etichetta_Selezione1 = new JLabel("Seleziona il Masto");
+		JLabel Etichetta_Selezione1 = new JLabel("Seleziona il Project Manager");
 		Etichetta_Selezione1.setBounds(53, 11, 269, 23);
 		contentPane.add(Etichetta_Selezione1);
 		

@@ -1,11 +1,9 @@
 package Codice;
-import Controller.Controller;
 
 public class Skill {
 	
 	//ATTRIBUTI
-	private String Nome;
-	//Lista Persona??	
+	private String Nome;	
 	
 	public Skill(String nome) {
 		Nome = nome;

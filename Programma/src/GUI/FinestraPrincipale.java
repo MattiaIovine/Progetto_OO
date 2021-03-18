@@ -47,7 +47,7 @@ public class FinestraPrincipale extends JFrame {
 		JButton Bottone_Meeting = new JButton("Gestione Meeting");
 		Bottone_Meeting.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				theController.Vista_Gestione_Meeting();
+				theController.Vista_Visualizza_Meeting();
 			}
 		});
 		Bottone_Meeting.setBounds(62, 160, 229, 44);
