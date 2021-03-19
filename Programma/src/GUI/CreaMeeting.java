@@ -205,7 +205,8 @@ public class CreaMeeting extends JFrame {
 		JButton Bottone_Indietro = new JButton("Indietro");
 		Bottone_Indietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				theController.Visualizza_Dettagli_Progetto(progetto);
+				setVisible(false);
 			}
 		});
 		Bottone_Indietro.setBounds(32, 383, 89, 23);
