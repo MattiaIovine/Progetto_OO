@@ -1,21 +1,14 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Codice.Impiegato;
 import Codice.Progetto;
 import Controller.Controller;
-
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -60,21 +53,21 @@ public class ProgettiTerminati extends JFrame {
 				theController.Torna_Gestione_Progetto();
 			}
 		});
-		Bottone_Indietro.setBounds(524, 406, 150, 23);
+		Bottone_Indietro.setBounds(10, 418, 91, 38);
 		contentPane.add(Bottone_Indietro);
 		
 		JButton Bottone_Dettagli_Progetto = new JButton("Dettagli Progetto");
 		Bottone_Dettagli_Progetto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(Lista_Progetti.isSelectionEmpty()) {
-					JOptionPane.showMessageDialog(frame, "Devi selezionare un progetto!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Devi selezionare un progetto!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				}
 				else {
 					theController.Visualizza_Dettagli_Progetto(terminati.get(Lista_Progetti.getSelectedIndex()));
 				}
 			}
 		});
-		Bottone_Dettagli_Progetto.setBounds(524, 90, 150, 23);
+		Bottone_Dettagli_Progetto.setBounds(547, 418, 127, 38);
 		contentPane.add(Bottone_Dettagli_Progetto);
 	}
 }

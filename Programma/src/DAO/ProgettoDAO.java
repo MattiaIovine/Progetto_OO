@@ -8,20 +8,20 @@ import Codice.Progetto;
 
 public class ProgettoDAO {
 
-	public boolean isProgettoByTitolo(String Titolo, Database DB){
-		return DB.ProgettoByTitolo(Titolo);
+	public boolean is_Progetto_By_Titolo(String titolo, Database DB){
+		return DB.ProgettoByTitolo(titolo);
 	}
 	
-	public void add_Progetto_To_DB(String Titolo, String Tipologia, String Ambito, Database DB) {
-		Progetto p1 = new Progetto(Titolo, Tipologia, Ambito);
+	public void add_Progetto_To_DB(String titolo, String tipologia, String ambito, Database DB) {
+		Progetto p1 = new Progetto(titolo, tipologia, ambito);
 		DB.add_Progetto(p1);
 	}
 
-	public void RemoveLastProgetto(Database DB) {
+	public void Rimuovi_Ultimo_Progetto_In_DB(Database DB) {
 		DB.RimuoviUltimoProgetto();
 	}
 
-	public void Add_Impiegati_to_Progetto_to_DB(ArrayList<Impiegato> scelti, Database DB) {
+	public void add_Impiegati_To_Progetto_To_DB(ArrayList<Impiegato> scelti, Database DB) {
 		DB.Add_Impiegati_to_Progetto(scelti);
 	}
 
@@ -33,7 +33,7 @@ public class ProgettoDAO {
 		return DB.get_Progetti_Terminati();
 	}
 
-	public void Termina_Progetto_in_DB(Progetto progetto, int valutazione, Database DB) {
+	public void Termina_Progetto_In_DB(Progetto progetto, int valutazione, Database DB) {
 		DB.Termina_Progetto(progetto, valutazione);
 	}
 }

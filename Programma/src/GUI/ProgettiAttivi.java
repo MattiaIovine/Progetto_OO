@@ -1,21 +1,14 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Codice.Impiegato;
 import Codice.Progetto;
 import Controller.Controller;
-
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -60,7 +53,7 @@ public class ProgettiAttivi extends JFrame {
 				theController.Torna_Gestione_Progetto();
 			}
 		});
-		Bottone_Indietro.setBounds(524, 406, 150, 23);
+		Bottone_Indietro.setBounds(10, 411, 98, 45);
 		contentPane.add(Bottone_Indietro);
 		
 		JButton Bottone_Dettagli_Progetto = new JButton("Dettagli Progetto");
@@ -74,7 +67,7 @@ public class ProgettiAttivi extends JFrame {
 				}
 			}
 		});
-		Bottone_Dettagli_Progetto.setBounds(524, 90, 150, 23);
+		Bottone_Dettagli_Progetto.setBounds(524, 179, 150, 23);
 		contentPane.add(Bottone_Dettagli_Progetto);
 		
 		JButton Bottone_Termina_Progetto = new JButton("Termina Progetto");
@@ -88,7 +81,7 @@ public class ProgettiAttivi extends JFrame {
 				}
 			}
 		});
-		Bottone_Termina_Progetto.setBounds(524, 235, 150, 23);
+		Bottone_Termina_Progetto.setBounds(542, 411, 132, 45);
 		contentPane.add(Bottone_Termina_Progetto);
 	}
 }

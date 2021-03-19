@@ -1,7 +1,5 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,7 +30,7 @@ public class FinestraPrincipale extends JFrame {
 				System.exit(NORMAL);
 			}
 		});
-		Bottone_Chiudi.setBounds(426, 328, 89, 44);
+		Bottone_Chiudi.setBounds(10, 327, 89, 44);
 		contentPane.add(Bottone_Chiudi);
 		
 		JButton Bottone_Progetti = new JButton("Gestione Progetti");
@@ -41,7 +39,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Gestione_Progetti();
 			}
 		});
-		Bottone_Progetti.setBounds(62, 60, 229, 44);
+		Bottone_Progetti.setBounds(157, 46, 229, 44);
 		contentPane.add(Bottone_Progetti);
 		
 		JButton Bottone_Meeting = new JButton("Lista Meeting");
@@ -50,7 +48,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Visualizza_Meeting();
 			}
 		});
-		Bottone_Meeting.setBounds(62, 160, 229, 44);
+		Bottone_Meeting.setBounds(157, 143, 229, 44);
 		contentPane.add(Bottone_Meeting);
 		
 		JButton Bottone_Assunzioni = new JButton("Assunzione Impiegato");
@@ -59,7 +57,7 @@ public class FinestraPrincipale extends JFrame {
 				theController.Vista_Assunzione_Impiegato();
 			}
 		});
-		Bottone_Assunzioni.setBounds(62, 260, 229, 44);
+		Bottone_Assunzioni.setBounds(157, 236, 229, 44);
 		contentPane.add(Bottone_Assunzioni);
 	}
 }

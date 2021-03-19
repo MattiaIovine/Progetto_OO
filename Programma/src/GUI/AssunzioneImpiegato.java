@@ -1,36 +1,23 @@
 package GUI;
 
-//import java.awt.BorderLayout;
-//import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import Controller.Controller;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-//import javax.swing.JDialog;
-
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.awt.event.ContainerAdapter;
-import java.awt.event.ContainerEvent;
 import javax.swing.JList;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-//import java.awt.event.KeyAdapter;
-//import java.awt.event.KeyEvent;
+
+
 public class AssunzioneImpiegato extends JFrame {
 
 	private JPanel contentPane;
@@ -63,7 +50,7 @@ public class AssunzioneImpiegato extends JFrame {
 				theController.Torna_Finestra_Principale();
 			}
 		});
-		Bottone_Indietro.setBounds(10, 517, 89, 44);
+		Bottone_Indietro.setBounds(10, 538, 89, 44);
 		contentPane.add(Bottone_Indietro);
 		
 		DefaultListModel<String> newListModel = new DefaultListModel<String>();
@@ -97,7 +84,7 @@ public class AssunzioneImpiegato extends JFrame {
 				else JOptionPane.showMessageDialog(frame, "Il codice fiscale deve essere di 16 caratteri!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 			}
 		});
-		Bottone_Assumi_Impiegato.setBounds(581, 132, 137, 44);
+		Bottone_Assumi_Impiegato.setBounds(659, 538, 137, 44);
 		contentPane.add(Bottone_Assumi_Impiegato);
 		
 		JButton Bottone_Aggiungi_Skill = new JButton("Aggiungi Skill");

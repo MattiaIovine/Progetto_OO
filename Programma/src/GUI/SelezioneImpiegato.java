@@ -1,24 +1,18 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.util.ArrayList;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import Codice.*;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
-
 import Controller.Controller;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ListSelectionModel;
-import javax.swing.AbstractListModel;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -41,18 +35,18 @@ public class SelezioneImpiegato extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(53, 45, 283, 169);
+		scrollPane.setBounds(53, 45, 480, 169);
 		contentPane.add(scrollPane);
 		
-		DefaultListModel<String> newListModel = new DefaultListModel<String>();
+		DefaultListModel<String> modelloimpiegato = new DefaultListModel<String>();
 		for(Impiegato impiegato:Risultati) {
-			newListModel.addElement(impiegato.toString());
+			modelloimpiegato.addElement(impiegato.toString());
 		}
 		JList Lista_Impiegati = new JList();
 		scrollPane.setViewportView(Lista_Impiegati);
 		Lista_Impiegati.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		Lista_Impiegati.setToolTipText("");
-		Lista_Impiegati.setModel(newListModel);
+		Lista_Impiegati.setModel(modelloimpiegato);
 		Lista_Impiegati.setVisible(true);
 	
 		JLabel Etichetta_Selezione1 = new JLabel("Seleziona il Project Manager");
@@ -73,7 +67,7 @@ public class SelezioneImpiegato extends JFrame {
 				else if(scelti.size()==0){
 					scelti.add(Risultati.get(Lista_Impiegati.getSelectedIndex()));
 					Risultati.remove(Lista_Impiegati.getSelectedIndex());
-					newListModel.remove(Lista_Impiegati.getSelectedIndex());
+					modelloimpiegato.remove(Lista_Impiegati.getSelectedIndex());
 					Etichetta_Selezione1.setVisible(false);	
 					Etichetta_Selezione2.setVisible(true);
 					Lista_Impiegati.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -87,18 +81,18 @@ public class SelezioneImpiegato extends JFrame {
 
 			}	
 		});
-		Bottone_Completa.setBounds(419, 140, 125, 23);
+		Bottone_Completa.setBounds(445, 283, 125, 33);
 		contentPane.add(Bottone_Completa);
 		
-		JButton Bottone_Cancella = new JButton("Cancella Creazione Progetto");
-		Bottone_Cancella.addActionListener(new ActionListener() {
+		JButton Bottone_Cancella_Creazione = new JButton("Cancella Creazione Progetto");
+		Bottone_Cancella_Creazione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				theController.RimuoviUltimoProgetto();
 			}
 		});
-		Bottone_Cancella.setBounds(53, 273, 196, 23);
-		contentPane.add(Bottone_Cancella);
+		Bottone_Cancella_Creazione.setBounds(10, 283, 196, 33);
+		contentPane.add(Bottone_Cancella_Creazione);
 		
 		JButton Bottone_Indietro = new JButton("Ritorna ai Filtri");
 		Bottone_Indietro.addActionListener(new ActionListener() {
@@ -106,7 +100,7 @@ public class SelezioneImpiegato extends JFrame {
 				theController.Torna_Filtri();
 			}
 		});
-		Bottone_Indietro.setBounds(419, 273, 125, 23);
+		Bottone_Indietro.setBounds(10, 239, 196, 33);
 		contentPane.add(Bottone_Indietro);
 		
 

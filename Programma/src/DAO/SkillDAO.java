@@ -6,9 +6,9 @@ import Database.*;
 
 public class SkillDAO {
 	
-	public ArrayList<Skill> add_Skill_To_DB(ArrayList<String> Abilità, Database DB) {
+	public ArrayList<Skill> add_Skill_To_DB(ArrayList<String> abilità, Database DB) {
 	ArrayList<Skill> skill = new ArrayList<>();
-	for(String nome:Abilità) {
+	for(String nome:abilità) {
 		Skill s = new Skill(nome);
 		skill.add(s);
 		if(!DB.isSkill(nome)) {

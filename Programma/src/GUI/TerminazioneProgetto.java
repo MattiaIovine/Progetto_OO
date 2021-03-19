@@ -1,26 +1,20 @@
 	package GUI;
 
-	import java.awt.BorderLayout;
-	import java.awt.EventQueue;
-
 	import javax.swing.JFrame;
 	import javax.swing.JPanel;
 	import javax.swing.border.EmptyBorder;
-
 	import Codice.Progetto;
 	import Controller.Controller;
 	import javax.swing.JLabel;
 	import javax.swing.JButton;
 	import javax.swing.JCheckBox;
-	import javax.swing.JTextField;
 	import javax.swing.JSpinner;
 	import javax.swing.SpinnerNumberModel;
 	import java.awt.event.ActionListener;
 	import java.awt.event.ItemEvent;
 	import java.awt.event.ItemListener;
 	import java.awt.event.ActionEvent;
-	import java.beans.PropertyChangeListener;
-	import java.beans.PropertyChangeEvent;
+
 
 	public class TerminazioneProgetto extends JFrame {
 
@@ -28,10 +22,11 @@
 		Controller theController;
 
 		public TerminazioneProgetto(Controller c, Progetto progetto) {
+			setTitle("Terminazione Progetto");
 			theController=c;
 			
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 638, 356);
+			setBounds(100, 100, 613, 306);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -65,10 +60,10 @@
 			Bottone_Conferma.setEnabled(false);
 			contentPane.add(Bottone_Conferma);
 
-			JCheckBox chckbxConfermaTerminazione = new JCheckBox("Conferma Terminazione");
-			chckbxConfermaTerminazione.setBounds(57, 42, 194, 23);
-			contentPane.add(chckbxConfermaTerminazione);
-	        chckbxConfermaTerminazione.addItemListener(new ItemListener() {
+			JCheckBox chckbx_Conferma_Terminazione = new JCheckBox("Conferma Terminazione");
+			chckbx_Conferma_Terminazione.setBounds(57, 42, 194, 23);
+			contentPane.add(chckbx_Conferma_Terminazione);
+			chckbx_Conferma_Terminazione.addItemListener(new ItemListener() {
 	            public void itemStateChanged(ItemEvent e) {
 	               if(e.getStateChange() == ItemEvent.SELECTED) {
 	            	   Bottone_Conferma.setEnabled(true);

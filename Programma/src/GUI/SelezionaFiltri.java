@@ -1,22 +1,14 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.NumberFormatter;
-
-import Codice.Impiegato;
 import Codice.Skill;
 import Controller.Controller;
-
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -24,20 +16,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.JSlider;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
 public class SelezionaFiltri extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField Campo_Val_Min;
-	private JTextField Campo_Val_Max;
-	private JTextField Campo_Salario_Min;
-	private JTextField Campo_Salario_Max;
 	JFrame frame;
 	Controller theController;
 
@@ -73,10 +59,10 @@ public class SelezionaFiltri extends JFrame {
 		Etichetta_Ambito.setBounds(35, 139, 46, 14);
 		contentPane.add(Etichetta_Ambito);
 		
-		JComboBox BoxAmbito = new JComboBox();
-		BoxAmbito.setModel(new DefaultComboBoxModel(new String[] {"Qualsiasi", "Economia", "Medicina", "Informatica", "Ingegneria"}));
-		BoxAmbito.setBounds(165, 135, 91, 22);
-		contentPane.add(BoxAmbito);
+		JComboBox Box_Ambiti = new JComboBox();
+		Box_Ambiti.setModel(new DefaultComboBoxModel(new String[] {"Qualsiasi", "Economia", "Medicina", "Informatica", "Ingegneria"}));
+		Box_Ambiti.setBounds(165, 135, 91, 22);
+		contentPane.add(Box_Ambiti);
 		
 		DefaultListModel<String> ModelloAbilità = new DefaultListModel<String>();
 		for(Skill s:listaskill) {ModelloAbilità.addElement(s.getNome());}
@@ -88,7 +74,7 @@ public class SelezionaFiltri extends JFrame {
 		contentPane.add(scrollPane);
 		JList Lista_Skill = new JList();
 		Lista_Skill.setModel(ModelloAbilità);
-		scrollPane.setViewportView(Lista_Skill);
+		scrollPane.setColumnHeaderView(Lista_Skill);
 
 		Lista_Skill.setVisible(true);
 		
@@ -97,7 +83,7 @@ public class SelezionaFiltri extends JFrame {
 		Etichetta_Skill.setBounds(37, 226, 83, 14);
 		contentPane.add(Etichetta_Skill);
 		
-		JButton Bottone_Seleziona_Filtri = new JButton("Seleziona Filtri");
+		JButton Bottone_Seleziona_Filtri = new JButton("Conferma Filtri");
 		Bottone_Seleziona_Filtri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ArrayList<Skill> SkillSelezionate = new ArrayList<>();
@@ -110,21 +96,21 @@ public class SelezionaFiltri extends JFrame {
 				} catch ( java.text.ParseException pe ) {
 					JOptionPane.showMessageDialog(frame, "Errore!","Attenzione", JOptionPane.ERROR_MESSAGE);
 				}
-				theController.getImpiegatibyFiltri((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) BoxAmbito.getSelectedItem(), SkillSelezionate);
+				theController.getImpiegatibyFiltri((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) Box_Ambiti.getSelectedItem(), SkillSelezionate);
 			}
 		});
-		Bottone_Seleziona_Filtri.setBounds(425, 91, 118, 32);
+		Bottone_Seleziona_Filtri.setBounds(442, 313, 118, 32);
 		contentPane.add(Bottone_Seleziona_Filtri);
 		
-		JButton btnNewButton = new JButton("Cancella Creazione Progetto");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton Bottone_Cancella_Creazione = new JButton("Cancella Creazione Progetto");
+		Bottone_Cancella_Creazione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				theController.RimuoviUltimoProgetto();
 			}
 		});
-		btnNewButton.setBounds(316, 295, 227, 23);
-		contentPane.add(btnNewButton);
+		Bottone_Cancella_Creazione.setBounds(10, 313, 188, 32);
+		contentPane.add(Bottone_Cancella_Creazione);
 		
 
 	}

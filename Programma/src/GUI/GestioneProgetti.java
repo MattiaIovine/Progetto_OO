@@ -1,7 +1,5 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -33,7 +31,7 @@ public class GestioneProgetti extends JFrame {
 				theController.Torna_Finestra_Principale();
 			}
 		});
-		Bottone_Indietro.setBounds(426, 328, 89, 44);
+		Bottone_Indietro.setBounds(10, 327, 89, 44);
 		contentPane.add(Bottone_Indietro);
 		
 		JButton Bottone_Progetti_Attivi = new JButton("Visualizza Progetti Attivi");
@@ -43,17 +41,17 @@ public class GestioneProgetti extends JFrame {
 				theController.Vista_Progetti_Attivi();
 			}
 		});
-		Bottone_Progetti_Attivi.setBounds(56, 101, 281, 44);
+		Bottone_Progetti_Attivi.setBounds(133, 55, 281, 44);
 		contentPane.add(Bottone_Progetti_Attivi);
 		
-		JButton Bottone_CreaProgetto = new JButton("Crea Nuovo Progetto");
-		Bottone_CreaProgetto.addActionListener(new ActionListener() {
+		JButton Bottone_Crea_Progetto = new JButton("Crea Nuovo Progetto");
+		Bottone_Crea_Progetto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				theController.Vista_Creazione_Progetto();
 			}
 		});
-		Bottone_CreaProgetto.setBounds(56, 247, 281, 44);
-		contentPane.add(Bottone_CreaProgetto);
+		Bottone_Crea_Progetto.setBounds(133, 240, 281, 44);
+		contentPane.add(Bottone_Crea_Progetto);
 		
 		JButton Bottone_Progetti_Terminati = new JButton("Visualizza Progetti Terminati");
 		Bottone_Progetti_Terminati.addActionListener(new ActionListener() {
@@ -61,7 +59,7 @@ public class GestioneProgetti extends JFrame {
 				theController.Vista_Progetti_Terminati();
 			}
 		});
-		Bottone_Progetti_Terminati.setBounds(56, 174, 281, 44);
+		Bottone_Progetti_Terminati.setBounds(133, 147, 281, 44);
 		contentPane.add(Bottone_Progetti_Terminati);
 	}
 

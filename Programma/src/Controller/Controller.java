@@ -49,13 +49,13 @@ public class Controller {
 		gp.setVisible(true);
 	}
 	public void Vista_Visualizza_Meeting() {
-		if(MDAO.get_Meetings_from_DB(DB).size()>0) {
+		if(MDAO.get_Meetings_From_DB(DB).size()>0) {
 			fp.setVisible(false);
-			vm= new VisualizzaMeeting(this, MDAO.get_Meetings_from_DB(DB));
+			vm= new VisualizzaMeeting(this, MDAO.get_Meetings_From_DB(DB));
 			vm.setVisible(true);
 		}
 		else {
-			JOptionPane.showMessageDialog(fp, "Non sono stati fissati meeting!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(fp, "Non sono stati fissati meeting!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 		}
 	}
 	public void Vista_Assunzione_Impiegato() {
@@ -84,7 +84,7 @@ public class Controller {
 			pa.setVisible(true);
 		}
 		else {
-			JOptionPane.showMessageDialog(gp, "Non sono presenti progetti attivi!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(gp, "Non sono presenti progetti attivi!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 			gp.setVisible(true);
 			}
 	}
@@ -96,7 +96,7 @@ public class Controller {
 			pt= new ProgettiTerminati(progettiterminati, this);
 			pt.setVisible(true);
 		}
-		else {JOptionPane.showMessageDialog(gp, "Non sono presenti progetti terminati!", "Attenzione", JOptionPane.WARNING_MESSAGE);}
+		else {JOptionPane.showMessageDialog(gp, "Non sono presenti progetti terminati!", "Attenzione!", JOptionPane.WARNING_MESSAGE);}
 	}
 	
 	public void Vista_Termina_Progetto(Progetto progetto) {
@@ -121,7 +121,7 @@ public class Controller {
 	}
 	
 	public void Assumi_Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario, ArrayList<String> Abilità) {
-		if(!IDAO.isImpiegatoByCF(DB, cF)) {
+		if(!IDAO.is_Impiegato_By_CF(DB, cF)) {
 			JOptionPane.showMessageDialog(fp, "Assunzione effettuata");
 		ArrayList<Skill> SkillDiImpiegato=SDAO.add_Skill_To_DB(Abilità, DB);
 		IDAO.add_Impiegato_To_DB(cF, nome, cognome, mail, telefono, salario, SkillDiImpiegato, DB);
@@ -129,13 +129,13 @@ public class Controller {
 		fp.setVisible(true);
 		}
 		else {
-			JOptionPane.showMessageDialog(ai, "E\' già esistente un Impiegato con questo codice fiscale", "Attenzione", JOptionPane.WARNING_MESSAGE);	
+			JOptionPane.showMessageDialog(ai, "E\' già esistente un Impiegato con questo codice fiscale", "Attenzione!", JOptionPane.WARNING_MESSAGE);	
 		}
 	}
 	
 	public void Crea_Progetto(String Titolo ,String Tipologia, String Ambito) {
-		if(PDAO.isProgettoByTitolo(Titolo, DB)) {
-			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione", JOptionPane.WARNING_MESSAGE);
+		if(PDAO.is_Progetto_By_Titolo(Titolo, DB)) {
+			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 		}
 		else {
 			PDAO.add_Progetto_To_DB(Titolo, Tipologia, Ambito, DB);
@@ -146,33 +146,33 @@ public class Controller {
 	}
 	
 	public void getImpiegatibyFiltri(Integer Valutazione, Double Salario, String Ambito, ArrayList<Skill> skillSelezionate) {
-		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri(Valutazione, Salario, Ambito, skillSelezionate, DB);
+		ArrayList<Impiegato> impiegatifiltrati =IDAO.get_Impiegato_By_Filtri(Valutazione, Salario, Ambito, skillSelezionate, DB);
 		if(impiegatifiltrati.size()>1) {
 			sf.setVisible(false);
 			si=new SelezioneImpiegato(this, impiegatifiltrati);
 			si.setVisible(true);
 		} else {
-			JOptionPane.showMessageDialog(sf, "Non esistono Impiegati appartenenti a questi criteri di ricerca!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(sf, "Non esistono Impiegati appartenenti a questi criteri di ricerca!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 		}
 	}
 	
 	public void RimuoviUltimoProgetto() {
-		PDAO.RemoveLastProgetto(DB);
+		PDAO.Rimuovi_Ultimo_Progetto_In_DB(DB);
 		fp.setVisible(true);
-		JOptionPane.showMessageDialog(fp, "Progetto cancellato.","", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(fp, "Progetto cancellato.","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 	public void Aggiungi_Impiegati(ArrayList<Impiegato> scelti) {
-		PDAO.Add_Impiegati_to_Progetto_to_DB(scelti, DB);
+		PDAO.add_Impiegati_To_Progetto_To_DB(scelti, DB);
 		si.setVisible(false);
 		fp.setVisible(true);
-		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","yay", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 	public void Termina_Progetto(Progetto progetto, int valutazione) {
-		PDAO.Termina_Progetto_in_DB(progetto, valutazione, DB);
+		PDAO.Termina_Progetto_In_DB(progetto, valutazione, DB);
 		tp.setVisible(false);
-		JOptionPane.showMessageDialog(fp, "Progetto terminato correttamente","yay", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(fp, "Progetto terminato correttamente","Successo!", JOptionPane.PLAIN_MESSAGE);
 		this.Vista_Progetti_Attivi();
 	}
 
@@ -189,17 +189,17 @@ public class Controller {
 	}
 
 	public void Crea_Meeting_Telematico(Progetto progetto, String codice_stanza, int anno, int mese, int giorno, int ora, int minuto) {
-		MDAO.Organizza_Telematico_to_DB(progetto, codice_stanza, anno, mese, giorno, ora, minuto, DB);
+		MDAO.Organizza_Telematico_To_DB(progetto, codice_stanza, anno, mese, giorno, ora, minuto, DB);
 		cm.setVisible(false);
 		dp.setVisible(true);
-		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","yay", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	public void Crea_Meeting_Fisico(Progetto progetto, String sala_riunioni, int anno, int mese, int giorno, int ora, int minuto) {
-		MDAO.Organizza_Fisico_to_DB(progetto, sala_riunioni, anno, mese, giorno, ora, minuto, DB);	
+		MDAO.Organizza_Fisico_To_DB(progetto, sala_riunioni, anno, mese, giorno, ora, minuto, DB);	
 		cm.setVisible(false);
 		dp.setVisible(true);
-		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","yay", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 	public void Tieni_Meeting(Meeting meeting) {
@@ -210,7 +210,7 @@ public class Controller {
 
 	public void Termina_Meeting(Meeting m, ArrayList<Impiegato> partecipanti) {
 		dm.setVisible(false);
-		MDAO.Termina_Meeting_in_DB(m, DB);
+		MDAO.Termina_Meeting_In_DB(m, DB);
 		fp.setVisible(true);
 		
 		

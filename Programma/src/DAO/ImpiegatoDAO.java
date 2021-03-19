@@ -14,12 +14,12 @@ public class ImpiegatoDAO {
 		DB.add_Impiegato(p1);
 	}
 	
-	public boolean isImpiegatoByCF (Database DB, String codfis) {
+	public boolean is_Impiegato_By_CF (Database DB, String codfis) {
 		return DB.ImpiegatoByCF(codfis);
 	}
 
-	public ArrayList<Impiegato> getimpiegatobyfiltri(Integer valutazione, Double salario, String ambito, ArrayList<Skill> skillSelezionate, Database dB) {
-		return dB.ImpiegatiByFiltri(valutazione, salario, ambito, skillSelezionate);
+	public ArrayList<Impiegato> get_Impiegato_By_Filtri(int valutazione, double salario, String ambito, ArrayList<Skill> skillSelezionate, Database DB) {
+		return DB.ImpiegatiByFiltri(valutazione, salario, ambito, skillSelezionate);
 	}
 	
 	

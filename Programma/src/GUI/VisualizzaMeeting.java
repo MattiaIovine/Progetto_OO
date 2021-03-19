@@ -1,17 +1,10 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
-
-import Codice.Impiegato;
 import Codice.Meeting;
-import Codice.Progetto;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import Controller.Controller;
@@ -20,10 +13,9 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.JLabel;
 import javax.swing.JScrollPane;
-import java.awt.Component;
-import javax.swing.Box;
+
+
 public class VisualizzaMeeting extends JFrame {
 	
 	private JPanel contentPane;
@@ -32,7 +24,7 @@ public class VisualizzaMeeting extends JFrame {
 
 	public VisualizzaMeeting(Controller c, ArrayList<Meeting> meetings) {
 		theController = c;
-		setTitle("Gestione Meeting");
+		setTitle("Lista Meeting");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 786, 423);
 		contentPane = new JPanel();
@@ -46,16 +38,16 @@ public class VisualizzaMeeting extends JFrame {
 		}
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(50, 75, 589, 178);
+		scrollPane.setBounds(62, 67, 589, 178);
 		contentPane.add(scrollPane);
 		
 		JList Lista_Meetings = new JList();
+		scrollPane.setViewportView(Lista_Meetings);
 		Lista_Meetings.setModel(modellomeetings);
 		Lista_Meetings.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		scrollPane.setViewportView(Lista_Meetings);
 		
 		JButton Bottone_Indietro = new JButton("Indietro");
-		Bottone_Indietro.setBounds(50, 327, 89, 44);
+		Bottone_Indietro.setBounds(10, 327, 89, 44);
 		Bottone_Indietro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -65,7 +57,7 @@ public class VisualizzaMeeting extends JFrame {
 		contentPane.add(Bottone_Indietro);
 		
 		JButton Bottone_Tieni_Meeting = new JButton("Tieni Meeting");
-		Bottone_Tieni_Meeting.setBounds(585, 327, 133, 44);
+		Bottone_Tieni_Meeting.setBounds(651, 327, 109, 44);
 		Bottone_Tieni_Meeting.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(Lista_Meetings.isSelectionEmpty()) {

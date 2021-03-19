@@ -1,33 +1,19 @@
 package GUI;
 
 import Controller.Controller;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JMenuBar;
-import javax.swing.JTable;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import java.awt.Color;
-import javax.swing.border.TitledBorder;
 
 public class CreazioneProgetto extends JFrame {
 
@@ -37,6 +23,7 @@ public class CreazioneProgetto extends JFrame {
 	JFrame frame;
 
 	public CreazioneProgetto(Controller c) {
+		setTitle("Crea Nuovo Progetto");
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 542, 421);
@@ -53,11 +40,11 @@ public class CreazioneProgetto extends JFrame {
 		Etichetta_Ambito.setBounds(88, 145, 46, 14);
 		contentPane.add(Etichetta_Ambito);
 		
-		JComboBox<String> boxAmbiti = new JComboBox<>();
-		boxAmbiti.setModel(new DefaultComboBoxModel<String>(new String[] {"Economia", "Medicina", "Informatica", "Ingegneria"}));
-		boxAmbiti.setBounds(215, 137, 137, 22);
-		boxAmbiti.setSelectedIndex(-1);
-		contentPane.add(boxAmbiti);
+		JComboBox<String> Box_Ambiti = new JComboBox<>();
+		Box_Ambiti.setModel(new DefaultComboBoxModel<String>(new String[] {"Economia", "Medicina", "Informatica", "Ingegneria"}));
+		Box_Ambiti.setBounds(215, 141, 137, 22);
+		Box_Ambiti.setSelectedIndex(-1);
+		contentPane.add(Box_Ambiti);
 		
 		JComboBox<String> boxTipologie = new JComboBox<>();
 		boxTipologie.setModel(new DefaultComboBoxModel<String>(new String[] {"Ricerca Sperimentale","Ricerca di base","Sviluppo Sperimentale","Ricerca Industriale"}));
@@ -72,21 +59,21 @@ public class CreazioneProgetto extends JFrame {
 				theController.Torna_Gestione_Progetto();
 			}
 		});
-		Bottone_Indietro.setBounds(10, 322, 103, 49);
+		Bottone_Indietro.setBounds(10, 331, 103, 40);
 		contentPane.add(Bottone_Indietro);
 		
 		JButton Bottone_Crea_Progetto = new JButton("Crea Progetto");
 		Bottone_Crea_Progetto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(boxTipologie.getSelectedIndex()==-1 || boxAmbiti.getSelectedIndex()==-1 || Campo_Titolo.getText().isEmpty()) {
+				if(boxTipologie.getSelectedIndex()==-1 || Box_Ambiti.getSelectedIndex()==-1 || Campo_Titolo.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(frame, "Tutti i campi devono essere pieni!", "Attenzione", JOptionPane.WARNING_MESSAGE);
 				}
 				else {
-					theController.Crea_Progetto(Campo_Titolo.getText(),(String) boxTipologie.getSelectedItem(),(String) boxAmbiti.getSelectedItem());
+					theController.Crea_Progetto(Campo_Titolo.getText(),(String) boxTipologie.getSelectedItem(),(String) Box_Ambiti.getSelectedItem());
 				}
 			}
 		});
-		Bottone_Crea_Progetto.setBounds(380, 322, 120, 49);
+		Bottone_Crea_Progetto.setBounds(396, 331, 120, 40);
 		contentPane.add(Bottone_Crea_Progetto);		
 		
 		JLabel Etichetta_Titolo_Progetto = new JLabel("Titolo Progetto");
