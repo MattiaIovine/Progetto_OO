@@ -28,6 +28,7 @@ public class Controller {
 	ProgettiTerminati pt;
 	TerminazioneProgetto tp;
 	CreaMeeting cm;
+	DettagliMeeting dm;
 
 	
 	public static void main(String[] args) {
@@ -48,9 +49,14 @@ public class Controller {
 		gp.setVisible(true);
 	}
 	public void Vista_Visualizza_Meeting() {
-		fp.setVisible(false);
-		vm= new VisualizzaMeeting(this);
-		vm.setVisible(true);
+		if(MDAO.get_Meetings_from_DB(DB).size()>0) {
+			fp.setVisible(false);
+			vm= new VisualizzaMeeting(this, MDAO.get_Meetings_from_DB(DB));
+			vm.setVisible(true);
+		}
+		else {
+			JOptionPane.showMessageDialog(fp, "Non sono stati fissati meeting!", "Attenzione", JOptionPane.WARNING_MESSAGE);
+		}
 	}
 	public void Vista_Assunzione_Impiegato() {
 		fp.setVisible(false);
@@ -140,7 +146,6 @@ public class Controller {
 	}
 	
 	public void getImpiegatibyFiltri(Integer Valutazione, Double Salario, String Ambito, ArrayList<Skill> skillSelezionate) {
-		System.out.println(Valutazione+" "+Salario+" "+Ambito+" ");
 		ArrayList<Impiegato> impiegatifiltrati =IDAO.getimpiegatobyfiltri(Valutazione, Salario, Ambito, skillSelezionate, DB);
 		if(impiegatifiltrati.size()>1) {
 			sf.setVisible(false);
@@ -195,6 +200,20 @@ public class Controller {
 		cm.setVisible(false);
 		dp.setVisible(true);
 		JOptionPane.showMessageDialog(dp, "Meeting Organizzato.","yay", JOptionPane.PLAIN_MESSAGE);
+	}
+
+	public void Tieni_Meeting(Meeting meeting) {
+		vm.setVisible(false);
+		dm = new DettagliMeeting(this, meeting.getPartecipanti(), meeting);
+		dm.setVisible(true);
+	}
+
+	public void Termina_Meeting(Meeting m, ArrayList<Impiegato> partecipanti) {
+		dm.setVisible(false);
+		MDAO.Termina_Meeting_in_DB(m, DB);
+		fp.setVisible(true);
+		
+		
 	}
 
 

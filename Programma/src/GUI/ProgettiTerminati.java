@@ -41,7 +41,6 @@ public class ProgettiTerminati extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(43, 27, 454, 319);
 		contentPane.add(scrollPane);
 		
@@ -50,9 +49,9 @@ public class ProgettiTerminati extends JFrame {
 			modelloprogetti.addElement(p.toString());
 		}
 		JList Lista_Progetti = new JList();
-		scrollPane.setViewportView(Lista_Progetti);
 		Lista_Progetti.setModel(modelloprogetti);
 		Lista_Progetti.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		scrollPane.setViewportView(Lista_Progetti);
 		
 		JButton Bottone_Indietro = new JButton("Indietro");
 		Bottone_Indietro.addActionListener(new ActionListener() {

@@ -16,7 +16,10 @@ public class Telematico extends Meeting{
 	}
 	
 	public String toString() {
-		return ("Progetto: "+this.getArgomento().getTitolo()+" Codice Stanza: "+Codice_Stanza+" Data: "+this.getData().getTime());
+		return ("Meeting Telematico      Codice Stanza:"+Codice_Stanza+"            Data: "+this.getData().getTime()+"        Progetto: "+this.getArgomento().getTitolo());
 	}
 	
+	public String getTipo() {
+		return "Codice Stanza: "+Codice_Stanza;
+	}
 }

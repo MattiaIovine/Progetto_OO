@@ -48,8 +48,8 @@ public class Progetto {
 		return Attivo;
 	}
 	
-	public void setAttivo_false() {
-		Attivo = false;
+	public void setAttivo(boolean attivo) {
+		Attivo = attivo;
 	}
 	
 	public ArrayList<Impiegato> getComponenti(){

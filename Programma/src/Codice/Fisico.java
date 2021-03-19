@@ -13,8 +13,12 @@ public class Fisico extends Meeting {
 		Sala_Riunioni=sala_riunioni;
 	}
 	
-	public String toString() {
-		return ("Progetto: "+this.getArgomento().getTitolo()+" Sala Riunioni: "+Sala_Riunioni+" Data: "+this.getData().getTime());
+	public String toString() { 
+		return ("Meeting Fisico               Sala Riunioni:"+Sala_Riunioni+"               Data: "+this.getData().getTime()+"         Progetto: "+this.getArgomento().getTitolo());
+	} 
+	
+	public String getTipo() {
+		return "Sala Riunioni: "+Sala_Riunioni;
 	}
 }
 

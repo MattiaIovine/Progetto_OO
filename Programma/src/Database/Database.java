@@ -60,33 +60,18 @@ public class Database {
 	
 	public void add_Impiegato(Impiegato imp) {
 		this.TabellaImpiegati.add(imp);
-		for(Impiegato i:TabellaImpiegati) {
-			System.out.println("Ecco le skill dell'impiegato "+i.getNome()+" "+i.getCognome());
-			for(Skill s:i.getSkills()) {
-				System.out.println(s.getNome());
-			}
-		}
 	}
 	
 	public void add_Progetto(Progetto pro) {
 		this.TabellaProgetti.add(pro);
-		for(Progetto p:TabellaProgetti){
-			System.out.println("Titolo:"+p.getTitolo()+" Ambito:"+p.getAmbito()+" Tipologia:"+p.getTipologia());
-		}
 	}
 
 	public void add_Meeting(Meeting mee) {
 		this.TabellaMeeting.add(mee);
-		for(Meeting m:TabellaMeeting) {
-			System.out.println(m.toString());
-		}
 	}
 	
 	public void add_Skill(Skill ski) {
 		this.TabellaSkills.add(ski);
-		for(Skill s:TabellaSkills) {
-			System.out.println(s.getNome());
-		}
 	}
 	
 	public boolean ProgettoByTitolo(String titolo) {
@@ -146,20 +131,32 @@ public class Database {
 
 	public void Add_Impiegati_to_Progetto(ArrayList<Impiegato> scelti) {
 		TabellaProgetti.get(TabellaProgetti.size()-1).setComponenti(scelti);
-		for(Impiegato i:TabellaImpiegati) {
-			if(scelti.contains(i)) {
-				i.addProgetto(TabellaProgetti.get(TabellaProgetti.size()-1));
-			}	
+		for(Impiegato i:scelti) {
+			i.addProgetto(TabellaProgetti.get(TabellaProgetti.size()-1));
 		}
 	}
 
 	public void Termina_Progetto(Progetto progetto, int valutazione) {
-		TabellaProgetti.get(TabellaProgetti.indexOf(progetto)).setAttivo_false();
-		ArrayList<Impiegato> componenti=progetto.getComponenti();
-		for(Impiegato i:TabellaImpiegati) {
-			if(componenti.contains(i)) {
-				i.addValutazione(valutazione);
+		TabellaProgetti.get(TabellaProgetti.indexOf(progetto)).setAttivo(false);
+		for(Impiegato i:progetto.getComponenti()) {
+			i.addValutazione(valutazione);
+		}
+	}
+
+	public ArrayList<Meeting> get_Meetings() {
+		ArrayList<Meeting> meetings = new ArrayList<>();
+		for(Meeting m: TabellaMeeting) {
+			if(!m.isTenuto()) {
+				meetings.add(m);
 			}
+		}
+		return meetings;
+	}
+
+	public void Termina_Meeting(Meeting m) {
+		m.setTenuto(true);
+		for(Impiegato i:m.getPartecipanti()) {
+			i.addValutazione(1);
 		}
 	}
 
