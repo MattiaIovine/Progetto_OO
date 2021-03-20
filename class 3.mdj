@@ -6690,36 +6690,19 @@
 									"subViews": [
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/QLN9iC1RA=",
+											"_id": "AAAAAAF4T/UG8NiwQZc=",
 											"_parent": {
 												"$ref": "AAAAAAF4T/PmrNheRIY="
 											},
 											"model": {
-												"$ref": "AAAAAAF4T/QLDNh/DrY="
+												"$ref": "AAAAAAF4T/UGx9it+b0="
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
 											"top": 760,
 											"width": 800.236328125,
 											"height": 13,
-											"text": "+Vista_Gestione_Progetti(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/T/ttikJMw=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/T/h9ih6c8="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 775,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Vista_Visualizza_Meeting(): void",
+											"text": "+Torna_Finestra_Principale(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6733,7 +6716,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 790,
+											"top": 775,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Vista_Assunzioni_Impiegato(): void",
@@ -6741,19 +6724,36 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UG8NiwQZc=",
+											"_id": "AAAAAAF4T/UxfNjvrrA=",
 											"_parent": {
 												"$ref": "AAAAAAF4T/PmrNheRIY="
 											},
 											"model": {
-												"$ref": "AAAAAAF4T/UGx9it+b0="
+												"$ref": "AAAAAAF4T/UxUNjsbTg="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 790,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Assumi_Impiegato(cF: String, nome: String, cognome: String, mail: String, telefono: String, salario: double, abilità: ArrayList<String>): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/QLN9iC1RA=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/QLDNh/DrY="
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
 											"top": 805,
 											"width": 800.236328125,
 											"height": 13,
-											"text": "+Torna_Finestra_Principale(): void",
+											"text": "+Vista_Gestione_Progetti(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6792,125 +6792,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UaK9jLoSI=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UZ/9jIwjk="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 850,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Torna_Filtri(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UdgdjRK+4=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UdZtjOdGk="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 865,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Vista_Termina_Progetto(progetto: Progetto): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UiadjX2CY=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UiO9jUqG4="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 880,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Vista_Progetti_Attivi(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UmOtjd44U=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UmE9jaw4A="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 895,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Vista_Progetti_Terminati(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UqOdjj4bI=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UqE9jgQlU="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 910,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Torna_Progetti_Attivi(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UtOdjpe/A=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UtF9jmVjc="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 925,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Torna_Progetti_Terminati(): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/UxfNjvrrA=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/UxUNjsbTg="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 940,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Assumi_Impiegato(cF: String, nome: String, cognome: String, mail: String, telefono: String, salario: double, abilità: ArrayList<String>): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAF4T/xbs9ksK+o=",
 											"_parent": {
 												"$ref": "AAAAAAF4T/PmrNheRIY="
@@ -6920,27 +6801,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 955,
+											"top": 850,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Crea_Progetto(titolo: String, tipologia: String, ambito: String): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/xqYNky154=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/xqN9kvMso="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 970,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Prendi_Impiegati_Da_DB(valutazione: int, salario: double, ambito: String, skillSelezionate: ArrayList<Skill>): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6954,10 +6818,44 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 985,
+											"top": 865,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Rimuovi_Ultimo_Progetto(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/xqYNky154=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/xqN9kvMso="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 880,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Prendi_Impiegati_Da_DB(valutazione: int, salario: double, ambito: String, skillSelezionate: ArrayList<Skill>): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UaK9jLoSI=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UZ/9jIwjk="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 895,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Torna_Filtri(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6971,10 +6869,112 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 1000,
+											"top": 910,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Aggiungi_Impiegati(scelti: ArrayList<Impiegato>): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UiadjX2CY=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UiO9jUqG4="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 925,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Vista_Progetti_Attivi(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UqOdjj4bI=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UqE9jgQlU="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 940,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Torna_Progetti_Attivi(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UmOtjd44U=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UmE9jaw4A="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 955,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Vista_Progetti_Terminati(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UtOdjpe/A=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UtF9jmVjc="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 970,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Torna_Progetti_Terminati(): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/yKWNlKVcw=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/yKM9lH9Fw="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 985,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Visualizza_Dettagli_Progetto(progetto: Progetto): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/UdgdjRK+4=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/UdZtjOdGk="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 1000,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Vista_Termina_Progetto(progetto: Progetto): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6996,23 +6996,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAF4T/yKWNlKVcw=",
-											"_parent": {
-												"$ref": "AAAAAAF4T/PmrNheRIY="
-											},
-											"model": {
-												"$ref": "AAAAAAF4T/yKM9lH9Fw="
-											},
-											"font": "Arial;13;0",
-											"left": 1213,
-											"top": 1030,
-											"width": 800.236328125,
-											"height": 13,
-											"text": "+Visualizza_Dettagli_Progetto(progetto: Progetto): void",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAF4T/yNhtlQnBQ=",
 											"_parent": {
 												"$ref": "AAAAAAF4T/PmrNheRIY="
@@ -7022,7 +7005,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 1045,
+											"top": 1030,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Vista_Creazione_Meeting(progetto: Progetto): void",
@@ -7039,7 +7022,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 1060,
+											"top": 1045,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Crea_Meeting_Telematico(progetto: Progetto, codice_stanza: String, anno: int, mese: int, giorno: int, ora: int, minuto: int): void",
@@ -7056,10 +7039,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1213,
-											"top": 1075,
+											"top": 1060,
 											"width": 800.236328125,
 											"height": 13,
 											"text": "+Crea_Meeting_Fisico(progetto: Progetto, sala_riunioni: String, anno: int, mese: int, giorno: int, ora: int, minuto: int): void",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF4T/T/ttikJMw=",
+											"_parent": {
+												"$ref": "AAAAAAF4T/PmrNheRIY="
+											},
+											"model": {
+												"$ref": "AAAAAAF4T/T/h9ih6c8="
+											},
+											"font": "Arial;13;0",
+											"left": 1213,
+											"top": 1075,
+											"width": 800.236328125,
+											"height": 13,
+											"text": "+Vista_Visualizza_Meeting(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9617,63 +9617,6 @@
 					"operations": [
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/QLDNh/DrY=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Gestione_Progetti",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/XqR9jzviY=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/QLDNh/DrY="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/T/h9ih6c8=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Visualizza_Meeting",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/YzZ9j2Dlo=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/T/h9ih6c8="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UDN9inMDQ=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Assunzioni_Impiegato",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/aZStj5FHw=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UDN9inMDQ="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
 							"_id": "AAAAAAF4T/UGx9it+b0=",
 							"_parent": {
 								"$ref": "AAAAAAF4T/PmqNhV3a8="
@@ -9693,161 +9636,17 @@
 						},
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UJ7NizK2E=",
+							"_id": "AAAAAAF4T/UDN9inMDQ=",
 							"_parent": {
 								"$ref": "AAAAAAF4T/PmqNhV3a8="
 							},
-							"name": "Torna_Gestione_Progetto",
+							"name": "Vista_Assunzioni_Impiegato",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/hLTdj/EmQ=",
+									"_id": "AAAAAAF4T/aZStj5FHw=",
 									"_parent": {
-										"$ref": "AAAAAAF4T/UJ7NizK2E="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UWMtjC5as=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Creazione_Progetto",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/iIXtkCjOA=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UWMtjC5as="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UZ/9jIwjk=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Torna_Filtri",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/k4gNkFv0s=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UZ/9jIwjk="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UdZtjOdGk=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Termina_Progetto",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/moRtkIYVI=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UdZtjOdGk="
-									},
-									"name": "progetto",
-									"type": {
-										"$ref": "AAAAAAF4T9J8ndYLibE="
-									}
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/moR9kJ9cQ=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UdZtjOdGk="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UiO9jUqG4=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Progetti_Attivi",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/oGJtkNb1g=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UiO9jUqG4="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UmE9jaw4A=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Vista_Progetti_Terminati",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/pEf9kQN7g=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UmE9jaw4A="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UqE9jgQlU=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Torna_Progetti_Attivi",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/p+3dkTlJM=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UqE9jgQlU="
-									},
-									"type": "void",
-									"direction": "return"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/UtF9jmVjc=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Torna_Progetti_Terminati",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/rCptkWiIg=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/UtF9jmVjc="
+										"$ref": "AAAAAAF4T/UDN9inMDQ="
 									},
 									"type": "void",
 									"direction": "return"
@@ -9938,6 +9737,63 @@
 						},
 						{
 							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/QLDNh/DrY=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Gestione_Progetti",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/XqR9jzviY=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/QLDNh/DrY="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UJ7NizK2E=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Torna_Gestione_Progetto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/hLTdj/EmQ=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UJ7NizK2E="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UWMtjC5as=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Creazione_Progetto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/iIXtkCjOA=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UWMtjC5as="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
 							"_id": "AAAAAAF4T/xbldkp7bc=",
 							"_parent": {
 								"$ref": "AAAAAAF4T/PmqNhV3a8="
@@ -9976,6 +9832,25 @@
 									"_id": "AAAAAAF4T/04K9ldBew=",
 									"_parent": {
 										"$ref": "AAAAAAF4T/xbldkp7bc="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/xt9tk1VfA=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Rimuovi_Ultimo_Progetto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/7pZtlu9LQ=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/xt9tk1VfA="
 									},
 									"type": "void",
 									"direction": "return"
@@ -10039,17 +9914,17 @@
 						},
 						{
 							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/xt9tk1VfA=",
+							"_id": "AAAAAAF4T/UZ/9jIwjk=",
 							"_parent": {
 								"$ref": "AAAAAAF4T/PmqNhV3a8="
 							},
-							"name": "Rimuovi_Ultimo_Progetto",
+							"name": "Torna_Filtri",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
-									"_id": "AAAAAAF4T/7pZtlu9LQ=",
+									"_id": "AAAAAAF4T/k4gNkFv0s=",
 									"_parent": {
-										"$ref": "AAAAAAF4T/xt9tk1VfA="
+										"$ref": "AAAAAAF4T/UZ/9jIwjk="
 									},
 									"type": "void",
 									"direction": "return"
@@ -10081,6 +9956,142 @@
 									},
 									"name": "scelti",
 									"type": "ArrayList<Impiegato>"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UiO9jUqG4=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Progetti_Attivi",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/oGJtkNb1g=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UiO9jUqG4="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UqE9jgQlU=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Torna_Progetti_Attivi",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/p+3dkTlJM=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UqE9jgQlU="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UmE9jaw4A=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Progetti_Terminati",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/pEf9kQN7g=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UmE9jaw4A="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UtF9jmVjc=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Torna_Progetti_Terminati",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/rCptkWiIg=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UtF9jmVjc="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/yKM9lH9Fw=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Visualizza_Dettagli_Progetto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4UAGlWNl/bIU=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/yKM9lH9Fw="
+									},
+									"name": "progetto",
+									"type": {
+										"$ref": "AAAAAAF4T9J8ndYLibE="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4UAGlWNmAKNA=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/yKM9lH9Fw="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/UdZtjOdGk=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Termina_Progetto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/moRtkIYVI=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UdZtjOdGk="
+									},
+									"name": "progetto",
+									"type": {
+										"$ref": "AAAAAAF4T9J8ndYLibE="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/moR9kJ9cQ=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/UdZtjOdGk="
+									},
+									"type": "void",
+									"direction": "return"
 								}
 							]
 						},
@@ -10120,36 +10131,6 @@
 									},
 									"name": "valutazione",
 									"type": "int"
-								}
-							]
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAF4T/yKM9lH9Fw=",
-							"_parent": {
-								"$ref": "AAAAAAF4T/PmqNhV3a8="
-							},
-							"name": "Visualizza_Dettagli_Progetto",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4UAGlWNl/bIU=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/yKM9lH9Fw="
-									},
-									"name": "progetto",
-									"type": {
-										"$ref": "AAAAAAF4T9J8ndYLibE="
-									}
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF4UAGlWNmAKNA=",
-									"_parent": {
-										"$ref": "AAAAAAF4T/yKM9lH9Fw="
-									},
-									"type": "void",
-									"direction": "return"
 								}
 							]
 						},
@@ -10345,6 +10326,25 @@
 									"_id": "AAAAAAF4UAaggdmoc+Y=",
 									"_parent": {
 										"$ref": "AAAAAAF4UAZKT9ma+R0="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF4T/T/h9ih6c8=",
+							"_parent": {
+								"$ref": "AAAAAAF4T/PmqNhV3a8="
+							},
+							"name": "Vista_Visualizza_Meeting",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF4T/YzZ9j2Dlo=",
+									"_parent": {
+										"$ref": "AAAAAAF4T/T/h9ih6c8="
 									},
 									"type": "void",
 									"direction": "return"
