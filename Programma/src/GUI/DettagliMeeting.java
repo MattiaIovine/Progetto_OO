@@ -73,7 +73,7 @@ public class DettagliMeeting extends JFrame {
 				for(int i=valori.length-1; i>=0;i--) {
 					partecipanti.remove(valori[i]);
 				}
-				theController.Termina_Meeting(m, partecipanti);
+				theController.Termina_Meeting(m);
 			}
 		});
 		Bottone_Termina_Meeting.setBounds(577, 344, 126, 38);

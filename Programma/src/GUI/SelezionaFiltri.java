@@ -96,7 +96,7 @@ public class SelezionaFiltri extends JFrame {
 				} catch ( java.text.ParseException pe ) {
 					JOptionPane.showMessageDialog(frame, "Errore!","Attenzione", JOptionPane.ERROR_MESSAGE);
 				}
-				theController.getImpiegatibyFiltri((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) Box_Ambiti.getSelectedItem(), SkillSelezionate);
+				theController.Prendi_Impiegati_Da_DB((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) Box_Ambiti.getSelectedItem(), SkillSelezionate);
 			}
 		});
 		Bottone_Seleziona_Filtri.setBounds(442, 313, 118, 32);
@@ -106,7 +106,7 @@ public class SelezionaFiltri extends JFrame {
 		Bottone_Cancella_Creazione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				theController.RimuoviUltimoProgetto();
+				theController.Rimuovi_Ultimo_Progetto();
 			}
 		});
 		Bottone_Cancella_Creazione.setBounds(10, 313, 188, 32);

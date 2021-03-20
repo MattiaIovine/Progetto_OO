@@ -11,13 +11,11 @@ public class Impiegato {
 	private String Mail;
 	private String Telefono;
 	private double  Salario;
-	private int 	  Valutazione = 0;
+	private int Valutazione;
 	private ArrayList<Skill> Abilità = new ArrayList<>();
 	private ArrayList<Progetto> Lavori = new ArrayList<>();
 	private ArrayList<Meeting> Partecipazioni = new ArrayList<>();
 
-	
-	//Controller theController;
 	
 	//COSTRUTTORE
 	public Impiegato(String cF, String nome, String cognome, String mail, String telefono, double salario) {
@@ -26,22 +24,11 @@ public class Impiegato {
 		Cognome = cognome;
 		Mail = mail;
 		Telefono = telefono;
+		Valutazione=0;
 		Salario = salario; 
 	}
 	
-	public void addSkill(Skill s) {
-		this.Abilità.add(s);
-	}
-	
-	public void addSkill(ArrayList<Skill> s) {
-		for(Skill abilità:s) {
-			this.Abilità.add(abilità);
-		}
-	}
-	
-	public ArrayList<Skill> getSkills(){
-		return this.Abilità;
-	}
+	//toString
 	
 	public String toString() {
 		return("CF: "+this.CF+" Nome: "+this.Nome+" Cognome: "+this.Cognome+" Salario: "+this.Salario+" Valutazione:"+this.Valutazione);
@@ -51,7 +38,7 @@ public class Impiegato {
 		return ("CF:"+this.CF+ " Nome: "+this.Nome+" Cognome: "+this.Cognome);
 	}
 	
-	//METODI
+	//Getter e Setter
 	public String getCF() {
 		return CF;
 	}
@@ -91,11 +78,17 @@ public class Impiegato {
 	public int getValutazione() {
 		return Valutazione;
 	}
+	
+	public void setValutazoine(int valutazione) {
+		Valutazione=valutazione;
+	}
+	
+	//Metodi
 	public void addValutazione(int valutazione) {
 		Valutazione+=valutazione;
 	}
 	
-	public boolean isambito(String ambito) {
+	public boolean isAmbito(String ambito) {
 		boolean temp=false;
 		if(!ambito.equals("Qualsiasi")) {
 			for(Progetto p:Lavori) {
@@ -114,6 +107,18 @@ public class Impiegato {
 		this.Lavori.add(progetto);
 	}
 
-
+	public void addPartecipazione(Meeting meeting) {
+		this.Partecipazioni.add(meeting);
+	}
+	
+	public void addSkill(ArrayList<Skill> skills) {
+		for(Skill abilità:skills) {
+			this.Abilità.add(abilità);
+		}
+	}
+	
+	public ArrayList<Skill> getSkills(){
+		return this.Abilità;
+	}
 	
 }

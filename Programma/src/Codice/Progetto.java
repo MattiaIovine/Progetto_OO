@@ -12,7 +12,6 @@ public class Progetto {
 	
 	
 	//CONSTRUTTORE
-	
 	public Progetto(String titolo, String tipologia, String ambito) {
 		super();
 		Titolo = titolo;
@@ -21,9 +20,11 @@ public class Progetto {
 		Attivo = true;
 	}
 	
+	//toString
 	public String toString() {
 		return("Titolo: "+this.Titolo+" -Tipologia: "+this.Tipologia+" -Ambito: "+this.Ambito);
 	}
+	
 	//GETTER E SETTER
 	public String getTitolo() {
 		return Titolo;
@@ -52,6 +53,7 @@ public class Progetto {
 		Attivo = attivo;
 	}
 	
+	//METODI
 	public ArrayList<Impiegato> getComponenti(){
 		return this.Componenti;
 	}
@@ -61,7 +63,7 @@ public class Progetto {
 			this.Componenti.add(i);
 		}	
 	}
-
+	
 	public Impiegato getProjectManager() {
 		return this.Componenti.get(0);
 	}

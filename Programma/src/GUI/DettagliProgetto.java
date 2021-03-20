@@ -35,7 +35,7 @@ public class DettagliProgetto extends JFrame {
 		Bottone_Meeting.setBounds(526, 428, 159, 40);
 		Bottone_Meeting.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				theController.Crea_Meeting(progetto);
+				theController.Vista_Creazione_Meeting(progetto);
 			}	
 		});
 		if(progetto.isAttivo()) {

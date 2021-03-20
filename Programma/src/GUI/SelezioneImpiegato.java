@@ -88,7 +88,7 @@ public class SelezioneImpiegato extends JFrame {
 		Bottone_Cancella_Creazione.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				theController.RimuoviUltimoProgetto();
+				theController.Rimuovi_Ultimo_Progetto();
 			}
 		});
 		Bottone_Cancella_Creazione.setBounds(10, 283, 196, 33);

@@ -33,12 +33,6 @@ public class Database {
 	Skill s3= new Skill("skill3");
 	Skill s4= new Skill("skill4");
 	
-	p1.addSkill(s1);
-	p2.addSkill(s4);	p2.addSkill(s3);
-	p3.addSkill(s2);
-	p4.addSkill(s1);	p4.addSkill(s3);
-	p5.addSkill(s4);  	p5.addSkill(s2); 	p5.addSkill(s3);
-	
 	TabellaImpiegati.add(p1);
 	TabellaImpiegati.add(p2);
 	TabellaImpiegati.add(p3);
@@ -122,7 +116,7 @@ public class Database {
 					skilltrovate=false;
 				}
 			}
-			if(i.getSalario()>=salario && i.getValutazione()>=valutazione && i.isambito(ambito) && skilltrovate) {
+			if(i.getSalario()>=salario && i.getValutazione()>=valutazione && i.isAmbito(ambito) && skilltrovate) {
 				ImpiegatiFiltrati.add(i);
 			}
 		}
@@ -156,6 +150,7 @@ public class Database {
 	public void Termina_Meeting(Meeting m) {
 		m.setTenuto(true);
 		for(Impiegato i:m.getPartecipanti()) {
+			i.addPartecipazione(m);
 			i.addValutazione(1);
 		}
 	}

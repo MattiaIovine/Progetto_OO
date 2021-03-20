@@ -1,12 +1,11 @@
 package Codice;
-import Controller.Controller;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Meeting {
 	
 	//ATTRIBUTI
-	private Calendar Data=Calendar.getInstance();;
+	private Calendar Data;
 	private Progetto Argomento;
 	private boolean Tenuto;
 	private ArrayList<Impiegato> Partecipanti= new ArrayList<>();
@@ -16,6 +15,7 @@ public class Meeting {
 	
 	public Meeting(Progetto argomento, int anno, int mese, int giorno, int ora, int minuto) {
 		super();
+		Data=Calendar.getInstance();
 		Data.set(anno, mese, giorno, ora, minuto);
 		Tenuto=false;
 		Argomento = argomento;
@@ -32,12 +32,7 @@ public class Meeting {
 	public void setData(Calendar data) {
 		Data = data;
 	}
-	public Progetto getArgomento() {
-		return Argomento;
-	}
-	public void setArgomento(Progetto argomento) {
-		Argomento = argomento;
-	}
+
 	
 	public boolean isTenuto() {
 		return Tenuto;
@@ -47,6 +42,12 @@ public class Meeting {
 		Tenuto=tenuto;
 	}
 	
+	public Progetto getArgomento() {
+		return Argomento;
+	}
+	public void setArgomento(Progetto argomento) {
+		Argomento = argomento;
+	}
 	public String getTipo(){
 		return null;
 	}
