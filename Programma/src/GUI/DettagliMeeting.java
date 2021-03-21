@@ -76,7 +76,7 @@ public class DettagliMeeting extends JFrame {
 				theController.Termina_Meeting(m);
 			}
 		});
-		Bottone_Termina_Meeting.setBounds(577, 344, 126, 38);
+		Bottone_Termina_Meeting.setBounds(552, 344, 151, 38);
 		contentPane.add(Bottone_Termina_Meeting);
 		
 		JLabel Etichetta_Seleziona_Assenti = new JLabel("Seleziona gli impiegati assenti");

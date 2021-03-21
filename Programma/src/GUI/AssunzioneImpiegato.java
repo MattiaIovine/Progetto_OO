@@ -57,7 +57,7 @@ public class AssunzioneImpiegato extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(127, 407, 370, 93);
+		scrollPane.setBounds(127, 407, 444, 93);
 		contentPane.add(scrollPane);
 		
 		JList Lista_Skill = new JList();
@@ -107,7 +107,7 @@ public class AssunzioneImpiegato extends JFrame {
 				}
 			}
 		});
-		Bottone_Aggiungi_Skill.setBounds(581, 329, 137, 44);
+		Bottone_Aggiungi_Skill.setBounds(636, 336, 137, 30);
 		contentPane.add(Bottone_Aggiungi_Skill);
 	
 		
@@ -195,7 +195,7 @@ public class AssunzioneImpiegato extends JFrame {
 				}
 			}
 		});
-		Campo_Abilità.setBounds(127, 329, 369, 44);
+		Campo_Abilità.setBounds(127, 329, 444, 44);
 		contentPane.add(Campo_Abilità);
 		Campo_Abilità.setColumns(10);
 		
@@ -210,7 +210,7 @@ public class AssunzioneImpiegato extends JFrame {
 				newListModel.clear();
 			}
 		});
-		Bottone_Pulisci_Skill.setBounds(581, 434, 137, 30);
+		Bottone_Pulisci_Skill.setBounds(636, 434, 137, 30);
 		contentPane.add(Bottone_Pulisci_Skill);
 		
 

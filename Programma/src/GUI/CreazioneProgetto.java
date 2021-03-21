@@ -26,7 +26,7 @@ public class CreazioneProgetto extends JFrame {
 		setTitle("Crea Nuovo Progetto");
 		theController = c;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 542, 421);
+		setBounds(100, 100, 706, 421);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -73,7 +73,7 @@ public class CreazioneProgetto extends JFrame {
 				}
 			}
 		});
-		Bottone_Crea_Progetto.setBounds(396, 331, 120, 40);
+		Bottone_Crea_Progetto.setBounds(560, 331, 120, 40);
 		contentPane.add(Bottone_Crea_Progetto);		
 		
 		JLabel Etichetta_Titolo_Progetto = new JLabel("Titolo Progetto");
@@ -83,7 +83,7 @@ public class CreazioneProgetto extends JFrame {
 		Campo_Titolo = new JTextArea();
 		Campo_Titolo.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		Campo_Titolo.setLineWrap(true);
-		Campo_Titolo.setBounds(215, 24, 236, 67);
+		Campo_Titolo.setBounds(215, 24, 409, 67);
 		contentPane.add(Campo_Titolo);
 	}
 }

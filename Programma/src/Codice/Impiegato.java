@@ -117,6 +117,10 @@ public class Impiegato {
 		}
 	}
 	
+	public void addSkill(Skill s) {
+		this.Abilità.add(s);
+	}
+	
 	public ArrayList<Skill> getSkills(){
 		return this.Abilità;
 	}

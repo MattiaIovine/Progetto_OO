@@ -70,7 +70,7 @@ public class SelezionaFiltri extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(130, 189, 287, 81);
+		scrollPane.setBounds(130, 189, 400, 81);
 		contentPane.add(scrollPane);
 		JList Lista_Skill = new JList();
 		Lista_Skill.setModel(ModelloAbilità);
@@ -109,7 +109,7 @@ public class SelezionaFiltri extends JFrame {
 				theController.Rimuovi_Ultimo_Progetto();
 			}
 		});
-		Bottone_Cancella_Creazione.setBounds(10, 313, 188, 32);
+		Bottone_Cancella_Creazione.setBounds(10, 313, 208, 32);
 		contentPane.add(Bottone_Cancella_Creazione);
 		
 
