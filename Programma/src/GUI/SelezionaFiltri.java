@@ -48,15 +48,15 @@ public class SelezionaFiltri extends JFrame {
 		contentPane.add(Spinner_Salario);
 		
 		JLabel Etichetta_Valutazione = new JLabel("Valutazione Minima");
-		Etichetta_Valutazione.setBounds(35, 36, 103, 14);
+		Etichetta_Valutazione.setBounds(24, 36, 131, 14);
 		contentPane.add(Etichetta_Valutazione);
 
 		JLabel Etichetta_Salario = new JLabel("Salario Minimo");
-		Etichetta_Salario.setBounds(37, 81, 83, 14);
+		Etichetta_Salario.setBounds(24, 81, 118, 14);
 		contentPane.add(Etichetta_Salario);
 		
 		JLabel Etichetta_Ambito = new JLabel("Ambito");
-		Etichetta_Ambito.setBounds(35, 139, 46, 14);
+		Etichetta_Ambito.setBounds(24, 139, 62, 14);
 		contentPane.add(Etichetta_Ambito);
 		
 		JComboBox Box_Ambiti = new JComboBox();
@@ -79,8 +79,8 @@ public class SelezionaFiltri extends JFrame {
 		Lista_Skill.setVisible(true);
 		
 		
-		JLabel Etichetta_Skill = new JLabel("Skill Richieste");
-		Etichetta_Skill.setBounds(37, 226, 83, 14);
+		JLabel Etichetta_Skill = new JLabel("Skill Desiderate");
+		Etichetta_Skill.setBounds(23, 226, 97, 14);
 		contentPane.add(Etichetta_Skill);
 		
 		JButton Bottone_Seleziona_Filtri = new JButton("Conferma Filtri");
