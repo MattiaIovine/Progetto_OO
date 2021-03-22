@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 public class DettagliMeeting extends JFrame {
 
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	
 	
 	public DettagliMeeting(Controller c, ArrayList<Impiegato> partecipanti, Meeting m) {

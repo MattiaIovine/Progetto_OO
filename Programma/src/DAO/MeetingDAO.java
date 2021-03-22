@@ -27,5 +27,9 @@ public class MeetingDAO {
 	public void Termina_Meeting_In_DB(Meeting m, Database DB) {
 		DB.Termina_Meeting(m);		
 	}
+
+	public void Termina_Meeting_Di_Progetto_In_DB(Progetto progetto, Database DB) {
+		DB.Termina_Meeting_Di_Progetto(progetto);
+	}
 	
 }

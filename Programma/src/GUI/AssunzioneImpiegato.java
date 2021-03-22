@@ -21,7 +21,7 @@ import javax.swing.ScrollPaneConstants;
 public class AssunzioneImpiegato extends JFrame {
 
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	private JTextField Campo_CF;
 	private JTextField Campo_Nome;
 	private JTextField Campo_Cognome;
@@ -30,7 +30,7 @@ public class AssunzioneImpiegato extends JFrame {
 	private JTextField Campo_Salario;
 	private JTextField Campo_Abilità;
 	JFrame frame;
-	ArrayList<String> Abilità = new ArrayList<>();
+	private ArrayList<String> Abilità = new ArrayList<>();
 	
 	
 	public AssunzioneImpiegato(Controller c) {

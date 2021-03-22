@@ -22,7 +22,7 @@ import javax.swing.DefaultComboBoxModel;
 public class CreaMeeting extends JFrame {
 
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	private JTextField Campo_Inserimento;
 	JFrame frame;
 	private boolean Telematico=false;
@@ -144,7 +144,7 @@ public class CreaMeeting extends JFrame {
 				}
 			}
 		});
-		Bottone_Conferma.setBounds(647, 396, 122, 42);
+		Bottone_Conferma.setBounds(621, 396, 148, 42);
 		contentPane.add(Bottone_Conferma);
 		Bottone_Conferma.setEnabled(false);
 		

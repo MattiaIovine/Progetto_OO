@@ -5,7 +5,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import Codice.*;
+import Codice.Impiegato;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import Controller.Controller;
@@ -19,8 +19,8 @@ import javax.swing.ScrollPaneConstants;
 
 public class SelezioneImpiegato extends JFrame {
 
-	Controller theController;
-	ArrayList<Impiegato> scelti = new ArrayList<>();
+	private Controller theController;
+	private ArrayList<Impiegato> scelti = new ArrayList<>();
 	private JPanel contentPane;
 	JFrame frame;
 

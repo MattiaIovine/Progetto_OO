@@ -25,7 +25,7 @@ public class SelezionaFiltri extends JFrame {
 
 	private JPanel contentPane;
 	JFrame frame;
-	Controller theController;
+	private Controller theController;
 
 	public SelezionaFiltri(ArrayList<Skill> listaskill, Controller c) {
 		setTitle("Selezione Filtri");
@@ -93,7 +93,7 @@ public class SelezionaFiltri extends JFrame {
 				try {
 				    Spinner_Valutazione.commitEdit();
 				    Spinner_Salario.commitEdit();
-				} catch ( java.text.ParseException pe ) {
+				} catch (java.text.ParseException pe ) {
 					JOptionPane.showMessageDialog(frame, "Errore!","Attenzione", JOptionPane.ERROR_MESSAGE);
 				}
 				theController.Prendi_Impiegati_Da_DB((Integer) Spinner_Valutazione.getValue(),(Double) Spinner_Salario.getValue(),(String) Box_Ambiti.getSelectedItem(), SkillSelezionate);

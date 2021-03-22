@@ -19,7 +19,7 @@ import javax.swing.JScrollPane;
 public class VisualizzaMeeting extends JFrame {
 	
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	JFrame frame;
 
 	public VisualizzaMeeting(Controller c, ArrayList<Meeting> meetings) {

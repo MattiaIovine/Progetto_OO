@@ -18,7 +18,7 @@ import java.awt.Color;
 public class CreazioneProgetto extends JFrame {
 
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	JTextArea Campo_Titolo;
 	JFrame frame;
 

@@ -10,25 +10,25 @@ import Database.*;
 import java.util.ArrayList;
 public class Controller {
 	
-	ImpiegatoDAO IDAO= new ImpiegatoDAO();
-	ProgettoDAO PDAO = new ProgettoDAO();
-	SkillDAO SDAO = new SkillDAO();
-	MeetingDAO MDAO = new MeetingDAO();
-	Database DB= new Database();
+	private ImpiegatoDAO IDAO= new ImpiegatoDAO();
+	private ProgettoDAO PDAO = new ProgettoDAO();
+	private SkillDAO SDAO = new SkillDAO();
+	private MeetingDAO MDAO = new MeetingDAO();
+	private Database DB= new Database();
 	
-	FinestraPrincipale fp;
-	AssunzioneImpiegato ai;
-	GestioneProgetti gp;
-	CreazioneProgetto cp;
-	SelezionaFiltri sf;
-	SelezioneImpiegato si;
-	ProgettiAttivi pa;
-	ProgettiTerminati pt;
-	DettagliProgetto dp;
-	TerminazioneProgetto tp;
-	CreaMeeting cm;
-	VisualizzaMeeting vm;
-	DettagliMeeting dm;
+	private FinestraPrincipale fp;
+	private AssunzioneImpiegato ai;
+	private GestioneProgetti gp;
+	private CreazioneProgetto cp;
+	private SelezionaFiltri sf;
+	private SelezioneImpiegato si;
+	private ProgettiAttivi pa;
+	private ProgettiTerminati pt;
+	private DettagliProgetto dp;
+	private TerminazioneProgetto tp;
+	private CreaMeeting cm;
+	private VisualizzaMeeting vm;
+	private DettagliMeeting dm;
 
 	
 	public static void main(String[] args) {
@@ -86,8 +86,8 @@ public class Controller {
 			JOptionPane.showMessageDialog(cp, "E\' già esistente un Progetto con questo Titolo", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 		}
 		else {
-			PDAO.add_Progetto_To_DB(titolo, tipologia, ambito, DB);
 			cp.setVisible(false);
+			PDAO.add_Progetto_To_DB(titolo, tipologia, ambito, DB);
 			sf= new SelezionaFiltri(SDAO.get_Skills_From_DB(DB), this);
 			sf.setVisible(true);
 		}
@@ -116,8 +116,8 @@ public class Controller {
 	}
 
 	public void Aggiungi_Impiegati(ArrayList<Impiegato> scelti) {
-		PDAO.add_Impiegati_To_Progetto_To_DB(scelti, DB);
 		si.setVisible(false);
+		PDAO.add_Impiegati_To_Progetto_To_DB(scelti, DB);
 		fp.setVisible(true);
 		JOptionPane.showMessageDialog(fp, "Progetto Creato con successo","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
@@ -168,6 +168,7 @@ public class Controller {
 
 	public void Termina_Progetto(Progetto progetto, int valutazione) {
 		PDAO.Termina_Progetto_In_DB(progetto, valutazione, DB);
+		MDAO.Termina_Meeting_Di_Progetto_In_DB(progetto, DB);
 		tp.setVisible(false);
 		JOptionPane.showMessageDialog(fp, "Progetto terminato correttamente","Successo!", JOptionPane.PLAIN_MESSAGE);
 		this.Vista_Progetti_Attivi();
@@ -213,8 +214,7 @@ public class Controller {
 		dm.setVisible(false);
 		MDAO.Termina_Meeting_In_DB(meeting, DB);
 		fp.setVisible(true);
-		
-		
+		JOptionPane.showMessageDialog(fp, "Meeting tenuto con successo","Successo!", JOptionPane.PLAIN_MESSAGE);
 	}
 
 

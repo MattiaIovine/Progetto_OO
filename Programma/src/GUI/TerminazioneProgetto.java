@@ -19,7 +19,7 @@
 	public class TerminazioneProgetto extends JFrame {
 
 		private JPanel contentPane;
-		Controller theController;
+		private Controller theController;
 
 		public TerminazioneProgetto(Controller c, Progetto progetto) {
 			setTitle("Terminazione Progetto");

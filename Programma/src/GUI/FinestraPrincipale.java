@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 public class FinestraPrincipale extends JFrame {
 
 	private JPanel contentPane;
-		Controller theController;
+	private Controller theController;
 		
 
 	public FinestraPrincipale(Controller c) {

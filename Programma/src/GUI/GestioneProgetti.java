@@ -11,8 +11,7 @@ import java.awt.event.ActionEvent;
 public class GestioneProgetti extends JFrame {
 
 	private JPanel contentPane;
-
-		Controller theController;
+	private Controller theController;
 
 	public GestioneProgetti(Controller c) {
 		theController = c;

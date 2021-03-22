@@ -156,6 +156,14 @@ public class Database {
 		}
 	}
 
+	public void Termina_Meeting_Di_Progetto(Progetto progetto) {
+		for(Meeting m:TabellaMeeting) {
+			if(m.getArgomento().equals(progetto)){
+				m.setTenuto(true);
+			}
+		}
+	}
+
 
 	
 	

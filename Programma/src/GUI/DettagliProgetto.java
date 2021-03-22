@@ -19,7 +19,7 @@ import javax.swing.ListSelectionModel;
 public class DettagliProgetto extends JFrame {
 
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 
 	public DettagliProgetto(Controller c, Progetto progetto) {
 		setTitle("Dettagli Progetto");
@@ -105,7 +105,7 @@ public class DettagliProgetto extends JFrame {
 		contentPane.add(Campo_Tipologia);
 		
 		JLabel Campo_Project_Manager = new JLabel(progetto.getProjectManager().toStringMinimo());
-		Campo_Project_Manager.setBounds(175, 145, 296, 14);
+		Campo_Project_Manager.setBounds(175, 145, 459, 14);
 		contentPane.add(Campo_Project_Manager);
 		
 

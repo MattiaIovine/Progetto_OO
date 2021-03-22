@@ -19,7 +19,7 @@ public class ProgettiTerminati extends JFrame {
 
 	
 	private JPanel contentPane;
-	Controller theController;
+	private Controller theController;
 	JFrame frame;
 	
 
@@ -67,7 +67,7 @@ public class ProgettiTerminati extends JFrame {
 				}
 			}
 		});
-		Bottone_Dettagli_Progetto.setBounds(547, 418, 127, 38);
+		Bottone_Dettagli_Progetto.setBounds(521, 418, 153, 38);
 		contentPane.add(Bottone_Dettagli_Progetto);
 	}
 }
