@@ -67,9 +67,9 @@ public class Database {
 	}
 	
 	public boolean ProgettoByTitolo(String titolo) {
-			boolean temp= false;
-			for(Progetto p: TabellaProgetti) if(titolo.equals(p.getTitolo())) temp=true;
-			return temp;
+		boolean temp= false;
+		for(Progetto p: TabellaProgetti) if(titolo.equals(p.getTitolo())) temp=true;
+		return temp;
 	}
 	
 	public boolean isSkill(String abilità) {
@@ -162,6 +162,17 @@ public class Database {
 				m.setTenuto(true);
 			}
 		}
+	}
+
+	public Skill getSkill(String nome) {
+		int temp=0;
+		while(temp<TabellaSkills.size()) {
+			if(nome.equals(TabellaSkills.get(temp).getNome())) {
+				break;
+			}
+			else temp++;
+		}
+		return TabellaSkills.get(temp);
 	}
 
 

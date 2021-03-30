@@ -8,10 +8,14 @@ public class SkillDAO {
 	
 	public ArrayList<Skill> add_Skill_To_DB(ArrayList<String> abilità, Database DB) {
 	ArrayList<Skill> skill = new ArrayList<>();
+	
 	for(String nome:abilità) {
-		Skill s = new Skill(nome);
-		skill.add(s);
-		if(!DB.isSkill(nome)) {
+		if(DB.isSkill(nome)) {
+			skill.add(DB.getSkill(nome));
+		}
+		else {
+			Skill s = new Skill(nome);
+			skill.add(s);
 			DB.add_Skill(s);
 		}
 	}

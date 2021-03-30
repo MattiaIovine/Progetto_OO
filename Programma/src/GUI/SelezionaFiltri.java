@@ -70,11 +70,11 @@ public class SelezionaFiltri extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(130, 189, 400, 81);
+		scrollPane.setBounds(130, 189, 398, 81);
 		contentPane.add(scrollPane);
 		JList Lista_Skill = new JList();
 		Lista_Skill.setModel(ModelloAbilità);
-		scrollPane.setColumnHeaderView(Lista_Skill);
+		scrollPane.setViewportView(Lista_Skill);
 
 		Lista_Skill.setVisible(true);
 		
