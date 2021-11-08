@@ -29,6 +29,7 @@ public class Controller {
 	private CreaMeeting cm;
 	private VisualizzaMeeting vm;
 	private DettagliMeeting dm;
+	//ciao
 
 	
 	public static void main(String[] args) {
